@@ -35,7 +35,16 @@ def board_find_groups(searchBoard):
 #	Removes given group from board and "compresses" the board accordingly
 #	IMPORTANT: Do not alter given board, create copy instead
 #	Return: Modified board
-def board_remove_group(searchBoard, searchGroup)
+def board_remove_group(searchBoard, searchGroup):
 	newBoard = [];
 	#Do stuff
 	return newBoard
+
+#	Prints the board to the screen
+def print_board(board):
+	linha = ""
+	for line in board:
+		for color in line:
+			linha += " " + str(color)
+		print(linha)
+		linha = ""
