@@ -83,7 +83,7 @@ def board_remove_group(searchBoard, searchGroup):
 
 	#Set all the coordinates in the group to 0 in the board and set min_col and max_col
 	for coord in searchGroup:
-		newBoard[pos_l(coord)][pos_c(coord)] = 0
+		newBoard[pos_l(coord)][pos_c(coord)] = get_no_color()
 		if (min_col == -1 or pos_l(coord) < min_col):
 			min_col = pos_c(coord)
 
