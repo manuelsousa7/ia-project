@@ -1,3 +1,4 @@
+from search import *
 
 # TAI group (grupo de pos)
 group = [];
@@ -68,7 +69,7 @@ def board_find_groups(m):
 	return res
 
 
-print board_find_groups([[1,2,2,3,3],[2,2,2,1,3],[1,2,2,2,2],[1,1,1,1,1]])
+#print board_find_groups([[1,2,2,3,3],[2,2,2,1,3],[1,2,2,2,2],[1,1,1,1,1]])
 
 #	Removes given group from board and "compresses" the board accordingly
 #	IMPORTANT: Do not alter given board, create copy instead
@@ -114,6 +115,24 @@ def board_remove_group(searchBoard, searchGroup):
 
 	return newBoard
 
+class same_game(Problem):
+	"""
+	Models a Same Game problem as a satisfaction problem.
+	A solution cannot have pieces left on the board.
+	"""
+	def __init__(self, board):
+		print ("")
+	def actions(self, state):
+		print ("")
+	def result(self, state, action):
+		print ("")
+	def goal_test(self, state):
+		print ("")
+	def path_cost(self, c, state1, action, state2):
+		print ("")
+	def h(self, node):
+		print ("")
+
 #	Prints the board to the screen
 def print_board(board):
 	linha = ""
@@ -122,5 +141,3 @@ def print_board(board):
 			linha += " " + str(color)
 		print(linha)
 		linha = ""
-
-board_remove_group([[1,2,2],[1,1,2],[1,1,1]], [(0, 1), (0, 2), (1, 2)])
