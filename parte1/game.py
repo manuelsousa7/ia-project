@@ -44,26 +44,26 @@ def pos_c(pos):
 def board_find_groups(m):
 	res = []
 	def floodfill(x, y, oC, nC):
-		stack = [(x, y)]
+		stack = [make_pos(x,y)]
 		resF = []
 		while len(stack) > 0:
 			x, y = stack.pop()
 			if m[x][y] != oC:
 				continue
-			resF = resF + [(x,y)]
+			resF = resF + [make_pos(x,y)]
 			m[x][y] = nC
 			if(y < len(m[0]) - 1):
-				stack.append((x, y + 1))  # baixo
+				stack.append(make_pos(x,y+1))  # baixo
 			if(x > 0):
-				stack.append((x - 1, y))  # esquerda
+				stack.append(make_pos(x-1,y))  # esquerda
 			if(y > 0):
-				stack.append((x, y - 1))  # cima
+				stack.append(make_pos(x,y-1))  # cima
 			if(x < len(m) - 1):
-				stack.append((x + 1, y))  # direita
+				stack.append(make_pos(x+1,y))  # direita
 		return resF
 	for i in range(0,len(m)):
 		for ii in range(0,len(m[0])):
-			if(m[i][ii] != -1):
+			if(color(m[i][ii])):
 					res = res + [floodfill(i,ii,m[i][ii],-1)]
 	return res
 
