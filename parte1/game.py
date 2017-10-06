@@ -75,43 +75,51 @@ def board_find_groups(m):
 #	IMPORTANT: Do not alter given board, create copy instead
 #	Return: Modified board
 def board_remove_group(searchBoard, searchGroup):
+
 	newBoard = searchBoard;
+	#Minimum and maximum column index to update
 	min_col = -1
 	max_col = -1
-	#Stores the board's column index that should be shifted
-	shiftIndexes = []
 
-	#Set all the coordinates in the group to 0 in the board and set min_col and max_col
+	print("Antes")
+	print_board(newBoard)
+
+	#Set all the coordinates in the group to 0 and the interval of modified columns
 	for coord in searchGroup:
 		newBoard[pos_l(coord)][pos_c(coord)] = get_no_color()
-		if (min_col == -1 or pos_l(coord) < min_col):
+		if (min_col == -1 or pos_c(coord) < min_col):
 			min_col = pos_c(coord)
 
-		if (max_col == -1 or pos_l(coord) > max_col):
+		if (max_col == -1 or pos_c(coord) > max_col):
 			max_col = pos_c(coord)
 
-	for i in range(max_col - min_col):
-		#Go up the board
-		currentLine = len(newBoard) - 1
-		lastLine = currentLine
-		while currentLine >= 0:
-			#Se encontrar uma cor, move-a para baixo
-			if (color(newBoard[currentLine][i+min_col])):
-				newBoard[lastLine][i+min_col] = newBoard[currentLine][i+min_col]
-				newBoard[currentLine][i+min_col] = 0
-				lastLine += 1
 
-			currentLine -= 1
+	#Stores the indexes of empty columns
+	emptyColumns = []
+	#Update only modified columns
+	for c in range(min_col, max_col+1, 1):
+		lastLine = len(newBoard) - 1
+		#Update each column from bottom to top
+		for l in range(len(newBoard)-1, -1, -1):
+			#If a color is found, move it to bottom of board
+			if (color(newBoard[l][c])):
+				newBoard[lastLine][c] = newBoard[l][c]
+				newBoard[l][c] = get_no_color()
+				lastLine -= 1
 
-		#If column is empty, increment shiftAmount
+		#If column is empty, add column index to emptyColumns
 		if (lastLine == len(newBoard) - 1):
-			shiftIndexes.append(i+min_col)
+			emptyColumns.append(c)
 
-	for j in range(len(shiftIndexes)-1):
-		for c in range(len(newBoard[0]) -j -shiftIndexes[j]):
-			for l in len(newBoard):
-				newBoard[l][c+shiftIndexes[j]-j] = newBoard[l][c+shiftIndexes[j]-j+1]
-				newBoard[l][c+shiftIndexes[j]-j+1] = 0
+	#Shift the board left once for every emptyColumn index
+	for emptyIndex in range(0, len(emptyColumns)):
+		for c in range(emptyColumns[emptyIndex] - emptyIndex, len(newBoard[0])-1, 1):
+			for l in range(len(newBoard)):
+				newBoard[l][c] = newBoard[l][c+1]
+				newBoard[l][c+1] = get_no_color()
+
+	print("\nDepois")
+	print_board(newBoard)
 
 	return newBoard
 
@@ -141,3 +149,27 @@ def print_board(board):
 			linha += " " + str(color)
 		print(linha)
 		linha = ""
+
+b1 = [[0,2,0,0,0,1,3,4,2],
+	  [0,2,2,3,0,1,2,3,1],
+	  [1,3,2,2,0,3,2,1,4],
+	  [2,2,1,2,0,3,1,2,3],
+	  [2,2,2,2,2,2,2,2,2]]
+
+g1 = [(0,1),
+	  (1,1),
+	  (1,2),
+	  (2,2),
+	  (2,3),
+	  (3,3),
+	  (4,0),
+	  (4,1),
+	  (4,2),
+	  (4,3),
+	  (4,4),
+	  (4,5),
+	  (4,6),
+	  (4,7),
+	  (4,8)]
+
+board_remove_group(b1,g1)
