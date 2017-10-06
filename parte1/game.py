@@ -44,25 +44,30 @@ class same_game(Problem):
 	def __init__(self, board):
 		self.board = board
 
-		while(!goal_test(self.board)):
+		#O goal é uma matriz com o tamanho do board, mas tudo a zeros!
+		#self.goal = 
+
+		while(not goal_test(self.board)):
 			#Resolve board
+			print("")
 
 	def actions(self, state):
 		possibleActions = []
-		#An action is a group of pieces to remove, with at least 2 pieces inside
 		for group in board_find_groups(state):
 			if (len(group) > 1):
 				possibleActions.append(group)
-
 		return possibleActions
 
 	def result(self, state, action):
 		return board_remove_group(state, action)
 
 	def goal_test(self, state):
-		return board_find_groups(state) == []
+		#Necessário?
+		super.goal_test(state)
 
 	def path_cost(self, c, state1, action, state2):
+		#Cost of going from state1 to state2
+		#Como avaliar o custo?
 		print ("")
 
 	def h(self, node):
