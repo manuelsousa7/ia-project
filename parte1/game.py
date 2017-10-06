@@ -42,7 +42,10 @@ class same_game(Problem):
 	A solution cannot have pieces left on the board.
 	"""
 	def __init__(self, board):
-		print ("")
+		self.board = board
+
+		while(!goal_test(self.board)):
+			#Resolve board
 
 	def actions(self, state):
 		possibleActions = []
