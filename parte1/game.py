@@ -1,45 +1,71 @@
 from search import *
 
-# TAI group (grupo de pos)
-group = [];
-
-# TAI board (lista 2D)
-board = [];
-
 # TAI color
 # no color = 0
 # has color > 0
-
-
 def get_no_color():
 	return 0
-
-
 def no_color(c):
 	return c == 0
-
-
 def color(c):
 	return c > 0
 
 # TAI pos
-
-
 def make_pos(l, c):
 	return (l, c)
-
-
 def pos_l(pos):
 	return pos[0]
-
-
 def pos_c(pos):
 	return pos[1]
 
+class sg_state:
+	"""
+	Holds the state of a board
+	"""
+	def __init__(self, newBoard):
+		#Other useful slots can be added!
+		self.board = newBoard;
 
-# TO DO
+	def __lt__(self, other_state):
+		thisCount = 0
+		otherCount = 0
+		for l in range(len(self.board)):
+			for c in range(len(self.board[0])):
+				thisCount += color(self.board[l][c])
+				otherCount += color(other_state[l][c])
 
-# Recommended, print board values to console
+		return thisCount < otherCount
+
+class same_game(Problem):
+	"""
+	Models a Same Game problem as a satisfaction problem.
+	A solution cannot have pieces left on the board.
+	"""
+	def __init__(self, board):
+		print ("")
+
+	def actions(self, state):
+		possibleActions = []
+		#An action is a group of pieces to remove, with at least 2 pieces inside
+		for group in board_find_groups(state):
+			if (len(group) > 1):
+				possibleActions.append(group)
+
+		return possibleActions
+
+	def result(self, state, action):
+		return board_remove_group(state, action)
+
+	def goal_test(self, state):
+		return board_find_groups(state) == []
+
+	def path_cost(self, c, state1, action, state2):
+		print ("")
+
+	def h(self, node):
+		print ("")
+
+
 
 #	Return:  List with all the groups of pieces in this board O(MN)
 def board_find_groups(m):
@@ -72,7 +98,6 @@ def board_find_groups(m):
 #print board_find_groups([[1,2,2,3,3],[2,2,2,1,3],[1,2,2,2,2],[1,1,1,1,1]])
 
 #	Removes given group from board and "compresses" the board accordingly
-#	IMPORTANT: Do not alter given board, create copy instead
 #	Return: Modified board
 def board_remove_group(searchBoard, searchGroup):
 
@@ -122,24 +147,6 @@ def board_remove_group(searchBoard, searchGroup):
 	print_board(newBoard)
 
 	return newBoard
-
-class same_game(Problem):
-	"""
-	Models a Same Game problem as a satisfaction problem.
-	A solution cannot have pieces left on the board.
-	"""
-	def __init__(self, board):
-		print ("")
-	def actions(self, state):
-		print ("")
-	def result(self, state, action):
-		print ("")
-	def goal_test(self, state):
-		print ("")
-	def path_cost(self, c, state1, action, state2):
-		print ("")
-	def h(self, node):
-		print ("")
 
 #	Prints the board to the screen
 def print_board(board):
