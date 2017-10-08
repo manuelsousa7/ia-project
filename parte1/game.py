@@ -37,9 +37,10 @@ def board_find_groups(searchBoard):
 #	Return: Modified board
 def board_remove_group(searchBoard, searchGroup):
 	newBoard = searchBoard;
+	#Saves the column index interval that should be modified
 	min_col = -1
 	max_col = -1
-	#Stores the board's column index that should be shifted
+	#Stores the board's column indexes that should be shifted
 	shiftIndexes = []
 
 	#Set all the coordinates in the group to 0 in the board and set min_col and max_col
@@ -59,12 +60,12 @@ def board_remove_group(searchBoard, searchGroup):
 			#Se encontrar uma cor, move-a para baixo
 			if (color(newBoard[currentLine][i+min_col])):
 				newBoard[lastLine][i+min_col] = newBoard[currentLine][i+min_col]
-				newBoard[currentLine][i+min_col] = 0
+				newBoard[currentLine][i+min_col] = get_no_color()
 				lastLine += 1
 
 			currentLine -= 1
 
-		#If column is empty, increment shiftAmount
+		#If column is empty, increment shiftIndexes
 		if (lastLine == len(newBoard) - 1):
 			shiftIndexes.append(i+min_col)
 
@@ -72,7 +73,7 @@ def board_remove_group(searchBoard, searchGroup):
 		for c in range(len(newBoard[0]) -j -shiftIndexes[j]):
 			for l in len(newBoard):
 				newBoard[l][c+shiftIndexes[j]-j] = newBoard[l][c+shiftIndexes[j]-j+1]
-				newBoard[l][c+shiftIndexes[j]-j+1] = 0
+				newBoard[l][c+shiftIndexes[j]-j+1] = get_no_color()
 
 	return newBoard
 
@@ -85,4 +86,5 @@ def print_board(board):
 		print(linha)
 		linha = ""
 
-board_remove_group([[1,2,2],[1,1,2],[1,1,1]], [(0, 1), (0, 2), (1, 2)])
+b1 = [[0,0,0,0,0],[0,2,3,3,0],[1,2,1,3,0],[2,2,2,2,0]]
+board_remove_group(b1,[(1,1),(2,1),(3,1),(3,2),(3,3),(3,0)])
