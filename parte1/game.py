@@ -1,4 +1,5 @@
 from search import *
+from copy import deepcopy
 
 # TAI color
 # no color = 0
@@ -20,8 +21,9 @@ def pos_c(pos):
 
 
 #	Return:  List with all the groups of pieces in this board O(MN)
-def board_find_groups(m):
+def board_find_groups(board):
 	res = []
+	m = deepcopy(board)
 	def floodfill(x, y, oC, nC):
 		stack = [make_pos(x,y)]
 		resF = []
@@ -58,7 +60,7 @@ def board_remove_group(searchBoard, searchGroup):
 	#Minimum and maximum column index to update
 	min_col = -1
 	max_col = -1
-
+	print(searchGroup)
 	print("Antes")
 	print_board(newBoard)
 
@@ -106,7 +108,7 @@ class sg_state:
 	"""
 	def __init__(self, newBoard):
 		#Other useful slots can be added!
-		self.board = newBoard
+		self.board = deepcopy(newBoard)
 		self.groups = board_find_groups(newBoard)
 	def __lt__(self, other_state):
 		#acho que esta bem, mas a comparacao deve ser feita entre o self board e o board do estado recebido
@@ -124,7 +126,7 @@ class same_game(Problem):
 	A solution cannot have pieces left on the board.
 	"""
 	def __init__(self, newBoard):
-		self.board = newBoard[:]
+		self.board = deepcopy(newBoard)
 		self.initial = sg_state(newBoard)
 
 		#O goal é uma matriz com o tamanho do board, mas tudo a zeros!
@@ -178,14 +180,14 @@ def solve(g):
 	res = depth_first_tree_search(p)
 	#res=greedy_best_first_graph_search(p,p.h)
 	print(p)
-	print("Actions: ", res.solution())
+	#print("Actions: ", res.solution())
 	print("Arvore DFS: ", p)
-	print("estados: ", str(p.found.board))
+	#print("estados: ", str(p.found.board))
 	print("sucessos: ", p.succs)
 	print("goal_tests: ", p.goal_tests)
 	print("Estados: ", p.states)  
-	print("Nodes: ", res.path())
-	return res.solution()     
+	#print("Nodes: ", res.path())
+	#return res.solution()     
 
 #	Prints the board to the screen
 def print_board(board):
