@@ -119,7 +119,7 @@ class sg_state:
 		for l in range(len(self.board)):
 			for c in range(len(self.board[0])):
 				thisCount += color(self.board[l][c])
-				otherCount += color(other_state[l][c])
+				otherCount += color(other_state.board[l][c])
 		return thisCount < otherCount
 
 class same_game(Problem):
@@ -179,8 +179,10 @@ class same_game(Problem):
 def solve(g):
 	p = InstrumentedProblem(same_game(g))
 	res = depth_first_tree_search(p)
-	#res=greedy_best_first_graph_search(p,p.h)
+	#res = greedy_best_first_graph_search(p, p.h)
+	#res = astar_search(p)
 	print(p)
+	"""
 	print("Actions: ", res.solution())
 	print("Arvore DFS: ", p)
 	print("estados: ", str(p.found.board))
@@ -188,6 +190,7 @@ def solve(g):
 	print("goal_tests: ", p.goal_tests)
 	print("Estados: ", p.states)  
 	print("Nodes: ", res.path())
+	"""
 	return res.solution()  
 
 #	Prints the board to the screen
@@ -199,39 +202,14 @@ def print_board(board):
 		print(linha)
 		linha = ""
 
-b1 = [[0,2,0,0,0,1,3,4,2],
-	  [0,2,2,3,0,1,2,3,1],
-	  [1,3,2,2,0,3,2,1,4],
-	  [2,2,1,2,0,3,1,2,3],
-	  [2,2,2,2,2,2,2,2,2]]
+#Ex1
+res = solve([[1,2,1,2,1],[2,1,2,1,2],[1,2,1,2,1],[2,1,2,1,2]])
 
-b2 = [[1,2,0],
-	  [1,2,0],
-	  [0,2,1]]
+#Ex2
+#res = solve([[1,2,2,3,3],[2,2,2,1,3],[1,2,2,2,2],[1,1,1,1,1]])
 
-g2 = [(0,1),
-	  (1,1),
-	  (2,1)]
+#Ex3
+#res = solve([[3,1,3,2],[1,1,1,3],[1,3,2,1],[1,1,3,3],[3,3,1,2],[2,2,2,2],[3,1,2,3],[2,3,2,3],[5,1,1,3],[4,5,1,2]]])
 
-g1 = [(0,1),
-	  (1,1),
-	  (1,2),
-	  (2,2),
-	  (2,3),
-	  (3,3),
-	  (4,0),
-	  (4,1),
-	  (4,2),
-	  (4,3),
-	  (4,4),
-	  (4,5),
-	  (4,6),
-	  (4,7),
-	  (4,8)]
-
-
-#board_remove_group(b2,g2)
-res = solve([[1,2,2,3,3],[2,2,2,1,3],[1,2,2,2,2],[1,1,1,1,1]])
-#res = solve(b1)
 print (res)
 
