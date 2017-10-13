@@ -119,7 +119,7 @@ class sg_state:
 		for l in range(len(self.board)):
 			for c in range(len(self.board[0])):
 				thisCount += color(self.board[l][c])
-				otherCount += color(other_state[l][c])
+				otherCount += color(other_state.board[l][c])
 		return thisCount < otherCount
 
 class same_game(Problem):
@@ -131,30 +131,8 @@ class same_game(Problem):
 		self.board = deepcopy(newBoard)
 		self.initial = sg_state(newBoard)
 
-		#O goal e uma matriz com o tamanho do board, mas tudo a zeros!
-		#self.goal = 
-
-		#while(not goal_test(self.board)):
-			#Resolve board
-			#print("")
-
 	def actions(self, state):
-		"""
-		possibleActions = []
-		for group in board_find_groups(state.groups):
-			if (len(state.groups) > 1):
-				possibleActions.append(state.groups)
-		return possibleActions
-		"""
 		return [state.groups[i] for i in range(len(state.groups)) if len(state.groups[i]) >= 2]
-		"""
-		# equivalente ao RETURN!
-		res = []
-		for i in range(len(state.groups)):
-			if len(state.groups[i]) > 1:
-				res = res + [state.groups[i]]
-		return res
-		"""
 
 	def result(self, state, action):
 		return sg_state(board_remove_group(state.board, action))
@@ -178,7 +156,7 @@ class same_game(Problem):
 
 def solve(g):
 	p = InstrumentedProblem(same_game(g))
-	res = depth_first_tree_search(p)
+	res = greedy_best_first_graph_search(p,p.h)
 	#res=greedy_best_first_graph_search(p,p.h)
 	print(p)
 	print("Actions: ", res.solution())
