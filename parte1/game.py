@@ -109,11 +109,9 @@ class sg_state:
 	Holds the state of a board
 	"""
 	def __init__(self, newBoard):
-		#Other useful slots can be added!
 		self.board = deepcopy(newBoard)
 		self.groups = board_find_groups(newBoard)
 	def __lt__(self, other_state):
-		#acho que esta bem, mas a comparacao deve ser feita entre o self board e o board do estado recebido
 		thisCount = 0
 		otherCount = 0
 		for l in range(len(self.board)):
@@ -131,30 +129,8 @@ class same_game(Problem):
 		self.board = deepcopy(newBoard)
 		self.initial = sg_state(newBoard)
 
-		#O goal e uma matriz com o tamanho do board, mas tudo a zeros!
-		#self.goal = 
-
-		#while(not goal_test(self.board)):
-			#Resolve board
-			#print("")
-
 	def actions(self, state):
-		"""
-		possibleActions = []
-		for group in board_find_groups(state.groups):
-			if (len(state.groups) > 1):
-				possibleActions.append(state.groups)
-		return possibleActions
-		"""
 		return [state.groups[i] for i in range(len(state.groups)) if len(state.groups[i]) >= 2]
-		"""
-		# equivalente ao RETURN!
-		res = []
-		for i in range(len(state.groups)):
-			if len(state.groups[i]) > 1:
-				res = res + [state.groups[i]]
-		return res
-		"""
 
 	def result(self, state, action):
 		return sg_state(board_remove_group(state.board, action))
@@ -174,15 +150,12 @@ class same_game(Problem):
 
 
 
-
-
 def solve(g):
 	p = InstrumentedProblem(same_game(g))
 	res = depth_first_tree_search(p)
 	#res = greedy_best_first_graph_search(p, p.h)
 	#res = astar_search(p)
 	print(p)
-	"""
 	print("Actions: ", res.solution())
 	print("Arvore DFS: ", p)
 	print("estados: ", str(p.found.board))
@@ -190,7 +163,6 @@ def solve(g):
 	print("goal_tests: ", p.goal_tests)
 	print("Estados: ", p.states)  
 	print("Nodes: ", res.path())
-	"""
 	return res.solution()  
 
 #	Prints the board to the screen
