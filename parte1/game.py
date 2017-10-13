@@ -56,11 +56,11 @@ def board_find_groups(board):
 def board_remove_group(searchBoard, searchGroup):
 
 
-	newBoard = searchBoard;
+	newBoard = deepcopy(searchBoard)
 	#Minimum and maximum column index to update
 	min_col = -1
 	max_col = -1
-	print(searchGroup)
+	print("")
 	print("Antes")
 	print_board(newBoard)
 
@@ -77,11 +77,14 @@ def board_remove_group(searchBoard, searchGroup):
 	emptyColumns = []
 	#Update only modified columns
 	for c in range(min_col, max_col+1, 1):
-		lastLine = len(newBoard) - 1
+		lastLine = -1
 		#Update each column from bottom to top
 		for l in range(len(newBoard)-1, -1, -1):
-			#If a color is found, move it to bottom of board
-			if (color(newBoard[l][c])):
+			#If there is no color and lastLine is invalid, validate it
+			if (no_color(newBoard[l][c]) and lastLine == -1):
+				lastLine = l
+			#If a color is found and lastLine is valid, move it to bottom of board
+			if (color(newBoard[l][c]) and lastLine != -1):
 				newBoard[lastLine][c] = newBoard[l][c]
 				newBoard[l][c] = get_no_color()
 				lastLine -= 1
@@ -97,9 +100,8 @@ def board_remove_group(searchBoard, searchGroup):
 				newBoard[l][c] = newBoard[l][c+1]
 				newBoard[l][c+1] = get_no_color()
 
-	print("\nDepois")
+	print("Depois")
 	print_board(newBoard)
-
 	return newBoard
 
 class sg_state:
@@ -129,7 +131,7 @@ class same_game(Problem):
 		self.board = deepcopy(newBoard)
 		self.initial = sg_state(newBoard)
 
-		#O goal é uma matriz com o tamanho do board, mas tudo a zeros!
+		#O goal e uma matriz com o tamanho do board, mas tudo a zeros!
 		#self.goal = 
 
 		#while(not goal_test(self.board)):
@@ -155,7 +157,6 @@ class same_game(Problem):
 		"""
 
 	def result(self, state, action):
-		print("RESULULTTTTULTTTTULTTTTULTTTTULTTTTULTTTTULTTTTULTTTTULTTTTULTTTTULTTTTULTTTTULTTTT")
 		return sg_state(board_remove_group(state.board, action))
 
 	def goal_test(self, state):
@@ -180,14 +181,14 @@ def solve(g):
 	res = depth_first_tree_search(p)
 	#res=greedy_best_first_graph_search(p,p.h)
 	print(p)
-	#print("Actions: ", res.solution())
+	print("Actions: ", res.solution())
 	print("Arvore DFS: ", p)
-	#print("estados: ", str(p.found.board))
+	print("estados: ", str(p.found.board))
 	print("sucessos: ", p.succs)
 	print("goal_tests: ", p.goal_tests)
 	print("Estados: ", p.states)  
-	#print("Nodes: ", res.path())
-	#return res.solution()     
+	print("Nodes: ", res.path())
+	return res.solution()  
 
 #	Prints the board to the screen
 def print_board(board):
