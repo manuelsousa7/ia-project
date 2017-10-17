@@ -1,0 +1,86 @@
+EX1
+
+
+---------- Greedy ----------
+Duracao:  0.0003037452697753906
+Estados:  0
+Goal tests:  2
+Sequencia de Acoes:  Sem Solucao
+Sequencia de Nos:  Sem Solucao
+Sucessos:  1
+-------------------------
+---------- A* -----------
+Duracao:  0.0002770423889160156
+Estados:  0
+Goal tests:  2
+Sequencia de Acoes:  Sem Solucao
+Sequencia de Nos:  Sem Solucao
+Sucessos:  1
+-------------------------
+---------- DFS ----------
+Duracao:  0.0002281665802001953
+Estados:  0
+Goal tests:  1
+Sequencia de Acoes:  Sem Solucao
+Sequencia de Nos:  Sem Solucao
+Sucessos:  1
+-------------------------
+
+
+EX2
+
+
+---------- Greedy ----------
+Duracao:  0.0011990070343017578
+Estados:  6
+Goal tests:  5
+Sequencia de Acoes:  [[(0, 1), (1, 1), (2, 1), (2, 2), (1, 2), (0, 2), (2, 3), (2, 4), (1, 0)], [(1, 0), (2, 0), (3, 0), (3, 1), (3, 2), (3, 3), (2, 3), (3, 4)], [(2, 1), (3, 1), (3, 0)]]
+Sequencia de Nos:  [<Node <__main__.sg_state object at 0x10bdea780>>, <Node <__main__.sg_state object at 0x10bff5ac8>>, <Node <__main__.sg_state object at 0x10bff5c18>>, <Node <__main__.sg_state object at 0x10bff5cf8>>]
+Sucessos:  3
+Arvore DFS:  <   3/   5/   6/<__m>
+Estado:  [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+-------------------------
+---------- A* -----------
+Duracao:  0.002003908157348633
+Estados:  7
+Goal tests:  6
+Sequencia de Acoes:  [[(0, 1), (1, 1), (2, 1), (2, 2), (1, 2), (0, 2), (2, 3), (2, 4), (1, 0)], [(1, 0), (2, 0), (3, 0), (3, 1), (3, 2), (3, 3), (2, 3), (3, 4)], [(2, 1), (3, 1), (3, 0)]]
+Sequencia de Nos:  [<Node <__main__.sg_state object at 0x10bdea860>>, <Node <__main__.sg_state object at 0x10bff5ac8>>, <Node <__main__.sg_state object at 0x10bff5b70>>, <Node <__main__.sg_state object at 0x10bff5a90>>]
+Sucessos:  4
+Arvore DFS:  <   4/   6/   7/<__m>
+Estado:  [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+-------------------------
+---------- DFS ----------
+Duracao:  0.0016009807586669922
+Estados:  7
+Goal tests:  5
+Sequencia de Acoes:  [[(2, 0), (3, 0), (3, 1), (3, 2), (3, 3), (3, 4)], [(1, 3), (1, 4), (2, 4)], [(1, 1), (2, 1), (3, 1), (3, 0), (3, 2), (2, 2), (1, 2), (3, 3), (3, 4)], [(3, 0), (3, 1)]]
+Sequencia de Nos:  [<Node <__main__.sg_state object at 0x10bdea780>>, <Node <__main__.sg_state object at 0x10bff5d30>>, <Node <__main__.sg_state object at 0x10bff5da0>>, <Node <__main__.sg_state object at 0x10bff59b0>>, <Node <__main__.sg_state object at 0x10bff5cc0>>]
+Sucessos:  4
+Arvore DFS:  <   4/   5/   7/<__m>
+Estado:  [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+-------------------------
+---------- Greedy ----------
+Duracao:  22.681954860687256
+Estados:  74701
+Goal tests:  74703
+Sequencia de Acoes:  Sem Solucao
+Sequencia de Nos:  Sem Solucao
+Sucessos:  74702
+-------------------------
+---------- A* -----------
+Duracao:  25.39186716079712
+Estados:  74701
+Goal tests:  74703
+Sequencia de Acoes:  Sem Solucao
+Sequencia de Nos:  Sem Solucao
+Sucessos:  74702
+-------------------------
+---------- DFS ----------
+Duracao:  20.709008932113647
+Estados:  74701
+Goal tests:  74702
+Sequencia de Acoes:  Sem Solucao
+Sequencia de Nos:  Sem Solucao
+Sucessos:  74702
+-------------------------

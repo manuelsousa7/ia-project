@@ -1,6 +1,6 @@
 from search import *
 from copy import deepcopy
-
+import time
 # TAI color
 # no color = 0
 # has color > 0
@@ -19,8 +19,8 @@ def pos_l(pos):
 def pos_c(pos):
 	return pos[1]
 
+
 #	Return:  List with all the groups of pieces in this board O(MN)
-# Made with a stack in order to prevent non optimized python recursion overflows
 def board_find_groups(board):
 	res = []
 	m = deepcopy(board)
@@ -44,13 +44,23 @@ def board_find_groups(board):
 		return resF
 	return [floodfill(l,c,m[l][c],-1) for l in range(0,len(m)) for c in range(0,len(m[0])) if(color(m[l][c]))]
 
+
+#print board_find_groups([[1,2,2,3,3],[2,2,2,1,3],[1,2,2,2,2],[1,1,1,1,1]])
+
 #	Removes given group from board and "compresses" the board accordingly
 #	Return: Modified board
 def board_remove_group(searchBoard, searchGroup):
+	#print("Antes")
+	#print(searchGroup)
+	#print_board(searchBoard)
+	#print("")
 	newBoard = deepcopy(searchBoard)
 	#Minimum and maximum column index to update
 	min_col = -1
 	max_col = -1
+	#print("")
+	#print("Antes")
+	#print_board(newBoard)
 
 	#Set all the coordinates in the group to 0 and the interval of modified columns
 	for coord in searchGroup:
@@ -87,6 +97,9 @@ def board_remove_group(searchBoard, searchGroup):
 			for l in range(len(newBoard)):
 				newBoard[l][c] = newBoard[l][c+1]
 				newBoard[l][c+1] = get_no_color()
+
+	#print("Depois")
+	#print_board(newBoard)
 	return newBoard
 
 class sg_state:
@@ -128,3 +141,102 @@ class same_game(Problem):
 
 	def h(self, node):
 		return len(node.state.groups) # Heuristica possivel (mas pode haver melhores)
+
+
+
+def solve(game,test):
+
+    start = time.time()
+    p = InstrumentedProblem(same_game(game))
+    res = None
+    if(test == "dfs"):
+    	print("---------- DFS ----------")
+    	res = depth_first_tree_search(p)
+    elif(test == "a*"):
+    	print("---------- A* -----------")
+    	res = astar_search(p)
+    elif(test == "greedy"):
+    	print("---------- Greedy ----------")
+    	res = greedy_best_first_graph_search(p,p.h)
+    end = time.time() 
+
+    print("Duracao: ", end - start)    
+    if res == None: 
+        print("Estados: ", p.states)        
+        print("Goal tests: ", p.goal_tests)
+        print("Sequencia de Acoes: ", "Sem Solucao")
+        print("Sequencia de Nos: ", "Sem Solucao")
+        print("Sucessos: ", p.succs)
+    else: 
+        print("Estados: ", p.states)        
+        print("Goal tests: ", p.goal_tests)
+        print("Sequencia de Acoes: ", res.solution())
+        print("Sequencia de Nos: ", res.path())
+        print("Sucessos: ", p.succs)
+        print("Arvore DFS: ", p)
+        print("Estado: ", str(p.found.board))
+    print("-------------------------")
+    # INICIOOOOOOOOOOOO \ Greedy \ OOOOOOOOOOOOOOOOOOOOOO #   
+
+
+#	Prints the board to the screen
+def print_board(board):
+	linha = ""
+	for line in board:
+		for color in line:
+			linha += " " + str(color)
+		print(linha)
+		linha = ""
+
+#Ex1
+print("EX1\n\n")
+res = solve([[1,2,1,2,1],[2,1,2,1,2],[1,2,1,2,1],[2,1,2,1,2]],"greedy")
+res = solve([[1,2,1,2,1],[2,1,2,1,2],[1,2,1,2,1],[2,1,2,1,2]],"a*")
+res = solve([[1,2,1,2,1],[2,1,2,1,2],[1,2,1,2,1],[2,1,2,1,2]],"dfs")
+
+#Ex2
+print("\n\nEX2\n\n")
+res = solve([[1,2,2,3,3],[2,2,2,1,3],[1,2,2,2,2],[1,1,1,1,1]],"greedy")
+res = solve([[1,2,2,3,3],[2,2,2,1,3],[1,2,2,2,2],[1,1,1,1,1]],"a*")
+res = solve([[1,2,2,3,3],[2,2,2,1,3],[1,2,2,2,2],[1,1,1,1,1]],"dfs")
+#Ex3
+res = solve([[3,1,3,2],[1,1,1,3],[1,3,2,1],[1,1,3,3],[3,3,1,2],[2,2,2,2],[3,1,2,3],[2,3,2,3],[5,1,1,3],[4,5,1,2]],"greedy")
+res = solve([[3,1,3,2],[1,1,1,3],[1,3,2,1],[1,1,3,3],[3,3,1,2],[2,2,2,2],[3,1,2,3],[2,3,2,3],[5,1,1,3],[4,5,1,2]],"a*")
+res = solve([[3,1,3,2],[1,1,1,3],[1,3,2,1],[1,1,3,3],[3,3,1,2],[2,2,2,2],[3,1,2,3],[2,3,2,3],[5,1,1,3],[4,5,1,2]],"dfs")
+
+b1 = [[0,2,0,0,0,1,3,4,2],
+	  [0,2,2,3,0,1,2,3,1],
+	  [1,3,2,2,0,3,2,1,4],
+	  [2,2,1,2,0,3,1,2,3],
+	  [2,2,2,2,2,2,2,2,2]]
+
+b2 = [[1,2,0],
+	  [1,2,0],
+	  [0,2,1]]
+
+g2 = [(0,1),
+	  (1,1),
+	  (2,1)]
+
+g1 = [(0,1),
+	  (1,1),
+	  (1,2),
+	  (2,2),
+	  (2,3),
+	  (3,3),
+	  (4,0),
+	  (4,1),
+	  (4,2),
+	  (4,3),
+	  (4,4),
+	  (4,5),
+	  (4,6),
+	  (4,7),
+	  (4,8)]
+
+
+#board_remove_group(b2,g2)
+#res = solve([[1,2,2,3,3],[2,2,2,1,3],[1,2,2,2,2],[1,1,1,1,1]])
+#print (print_board(board_remove_group(b1,g1)))
+#print_board([[0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 3, 4, 2, 0], [0, 0, 0, 0, 1, 2, 3, 1, 0], [1, 3, 0, 0, 3, 2, 1, 4, 0], [2, 2, 1, 3, 3, 1, 2, 3, 0]])
+
