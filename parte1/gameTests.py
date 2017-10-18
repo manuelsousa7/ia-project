@@ -160,7 +160,8 @@ def solve(game,test):
     	res = greedy_best_first_graph_search(p,p.h)
     end = time.time() 
 
-    print("Duracao: ", end - start)    
+    print("Duracao: ", end - start)   
+    
     if res == None:
         print("Estados: ", p.states)        
         print("Goal tests: ", p.goal_tests)

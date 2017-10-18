@@ -43,8 +43,11 @@
 \maketitle
 
 \section*{Introdução}
-balbalbalablablball
+Todas as complexidades indicadas são referentes à procura numa árvore binária,
+visto que alguns valores podem ser diferentes no caso específico de uma procura
+num grafo.\par
 
+<<<<<<< HEAD
 \section*{Procura em Profundidade Primeiro}
 Nao Completa
 Nao Optima
@@ -57,20 +60,92 @@ Tempo(b^m) mas uma boa heurística pode reduzi-lo dramaticamente
 Espaco(b^m) no pior caso mantém todos os nós em memória
 Nao Optima\par
 
+=======
+\section*{Descrição do problema}
 
-fdgfgggdfdfggfddgfgdffdggdf
+\section*{Profundidade Primeiro}
+
+	\begin{table}[h!]
+	  \centering
+	  \caption{Casos teste}
+	  \label{tab:Profundidade Primeiro}
+	  \begin{tabular}{l|c|c|c|c|r}
+	     & Exemplo 1 & Exemplo 2 & Exemplo 3 & Exemplo 4 & Exemplo 5 \\
+	    \hline
+	    Tempo de Execução (s) & 0.000291 & 0.001387 & 18.795010 & 0.027842 & 795.923310 \\
+	    \hline
+	    Nº de nós expandidos & 0 & 7 & 74701 & 85 & 3123363 \\
+	    \hline
+	    Nº de nós gerados & 1 & 4 & 74702 & 54 & 3123308 \\
+	    \hline
+	  \end{tabular}
+	\end{table}
+
+\section*{Procura Gananciosa}
+>>>>>>> d66346661f1dbfb5352a510fe30b9fd6a88954a2
+
+	\begin{table}[h!]
+	  \centering
+	  \caption{Casos teste}
+	  \label{tab:Procura Gananciosa}
+	  \begin{tabular}{l|c|c|c|c|r}
+	     & Exemplo 1 & Exemplo 2 & Exemplo 3 & Exemplo 4 & Exemplo 5 \\
+	    \hline
+	    Tempo de Execução (s) & 0.000331 & 0.001410 & 26.159087 & 0.016135 & 0.119890 \\
+	    \hline
+	    Nº de nós expandidos & 0 & 6 & 74701 & 59 & 319 \\
+	    \hline
+	    Nº de nós gerados & 1 & 3 & 74702 & 42 & 256 \\
+	    \hline
+	  \end{tabular}
+	\end{table}
 
 \section*{A*}
+<<<<<<< HEAD
 Optima!
 Completa
 Tempo: Exponencial 
 Exponencial: mantém todos os nós em memória (no pior caso)
+=======
+>>>>>>> d66346661f1dbfb5352a510fe30b9fd6a88954a2
 
-sdfsfsdsfdsdfsdfsdf
+	\begin{table}[h!]
+	  \centering
+	  \caption{Casos teste}
+	  \label{tab:A*}
+	  \begin{tabular}{l|c|c|c|c|r}
+	     & Exemplo 1 & Exemplo 2 & Exemplo 3 & Exemplo 4 & Exemplo 5 \\
+	    \hline
+	    Tempo de Execução (s) & 0.000266 & 0.001522 & 25.653358 & 0.015687 & 0.040954 \\
+	    \hline
+	    Nº de nós expandidos & 0 & 7 & 74701 & 43 & 91 \\
+	    \hline
+	    Nº de nós gerados & 1 & 4 & 74702 & 24 & 16 \\
+	    \hline
+	  \end{tabular}
+	\end{table}
 
 \section*{Conclusão}
-adsdadsdasdsadasdasdas
 
-sdfsfsdsfdsdfsdfsdf
+	\begin{table}[h!]
+	  \centering
+	  \caption{Desempenho}
+	  \label{tab: Comparação}
+	  \begin{tabular}{l|c|c|c|r}
+	     & Complexidade Temporal & Complexidade Espacial & Completo & Ótimo \\
+	    \hline
+	    Profundidade Primeiro & O(b^m) & O(b*m) & Não & Não \\
+	    \hline
+	    Procura Gananciosa & O(b^m) & O(b^m) & Não & Não \\
+	    \hline
+	    A* & Exponencial & Exponencial & Sim(Exceto se for infinito) & Sim \\
+	    \hline
+	  \end{tabular}
+	\end{table}
+
+A heurística usada (nº de grupos restantes) não é admissível, porque em certos casos porque sobre-estimar o custo.
+
+Impacto que a dimensão do tabuleiro e número de cores tem na procura?
+
 
 \end{document}
