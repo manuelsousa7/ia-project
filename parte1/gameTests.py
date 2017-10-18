@@ -162,7 +162,7 @@ def solve(game,test):
 
     print("Duracao: ", end - start)    
     if res == None: 
-        print("Estados: ", p.states)        
+        print("Estados: ", p.states)
         print("Goal tests: ", p.goal_tests)
         print("Sequencia de Acoes: ", "Sem Solucao")
         print("Sequencia de Nos: ", "Sem Solucao")
