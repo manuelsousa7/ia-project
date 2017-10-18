@@ -160,9 +160,10 @@ def solve(game,test):
     	res = greedy_best_first_graph_search(p,p.h)
     end = time.time() 
 
-    print("Duracao: ", end - start)    
-    if res == None: 
-        print("Estados: ", p.states)
+    print("Duracao: ", end - start)   
+    
+    if res == None:
+        print("Estados: ", p.states)        
         print("Goal tests: ", p.goal_tests)
         print("Sequencia de Acoes: ", "Sem Solucao")
         print("Sequencia de Nos: ", "Sem Solucao")
@@ -188,21 +189,39 @@ def print_board(board):
 		print(linha)
 		linha = ""
 
-#Ex1
+# Tabuleiro de 4x5 (linhas x colunas) com 2 cores sem solucao
 print("EX1\n\n")
 res = solve([[1,2,1,2,1],[2,1,2,1,2],[1,2,1,2,1],[2,1,2,1,2]],"greedy")
 res = solve([[1,2,1,2,1],[2,1,2,1,2],[1,2,1,2,1],[2,1,2,1,2]],"a*")
 res = solve([[1,2,1,2,1],[2,1,2,1,2],[1,2,1,2,1],[2,1,2,1,2]],"dfs")
 
-#Ex2
+# Tabuleiro de 4x5 (linhas x colunas) com 3 cores 
 print("\n\nEX2\n\n")
 res = solve([[1,2,2,3,3],[2,2,2,1,3],[1,2,2,2,2],[1,1,1,1,1]],"greedy")
 res = solve([[1,2,2,3,3],[2,2,2,1,3],[1,2,2,2,2],[1,1,1,1,1]],"a*")
 res = solve([[1,2,2,3,3],[2,2,2,1,3],[1,2,2,2,2],[1,1,1,1,1]],"dfs")
-#Ex3
+
+# Tabuleiro de 10x4 (linhas x colunas) com 3 cores sem solucao
+print("\n\nEX3\n\n")
 res = solve([[3,1,3,2],[1,1,1,3],[1,3,2,1],[1,1,3,3],[3,3,1,2],[2,2,2,2],[3,1,2,3],[2,3,2,3],[5,1,1,3],[4,5,1,2]],"greedy")
 res = solve([[3,1,3,2],[1,1,1,3],[1,3,2,1],[1,1,3,3],[3,3,1,2],[2,2,2,2],[3,1,2,3],[2,3,2,3],[5,1,1,3],[4,5,1,2]],"a*")
 res = solve([[3,1,3,2],[1,1,1,3],[1,3,2,1],[1,1,3,3],[3,3,1,2],[2,2,2,2],[3,1,2,3],[2,3,2,3],[5,1,1,3],[4,5,1,2]],"dfs")
+
+# Tabuleiro de 4x5 (linhas x colunas) com 3 cores 
+print("\n\nEX4\n\n")
+res = solve([[3,1,3,2],[1,1,1,3],[1,3,2,1],[1,1,3,3],[3,3,1,2],[2,2,2,2],[3,1,2,3],[2,3,2,3],[2,1,1,3],[2,3,1,2]],"greedy")
+res = solve([[3,1,3,2],[1,1,1,3],[1,3,2,1],[1,1,3,3],[3,3,1,2],[2,2,2,2],[3,1,2,3],[2,3,2,3],[2,1,1,3],[2,3,1,2]],"a*")
+res = solve([[3,1,3,2],[1,1,1,3],[1,3,2,1],[1,1,3,3],[3,3,1,2],[2,2,2,2],[3,1,2,3],[2,3,2,3],[2,1,1,3],[2,3,1,2]],"dfs")
+
+# Tabuleiro de 10x4 (linhas x colunas) com 5 cores
+print("\n\nEX5\n\n")
+res = solve([[1,1,5,3],[5,3,5,3],[1,2,5,4],[5,2,1,4],[5,3,5,1],[5,3,4,4],[5,5,2,5],[1,1,3,1],[1,2,1,3],[3,3,5,5]],"greedy")
+res = solve([[1,1,5,3],[5,3,5,3],[1,2,5,4],[5,2,1,4],[5,3,5,1],[5,3,4,4],[5,5,2,5],[1,1,3,1],[1,2,1,3],[3,3,5,5]],"a*")
+res = solve([[1,1,5,3],[5,3,5,3],[1,2,5,4],[5,2,1,4],[5,3,5,1],[5,3,4,4],[5,5,2,5],[1,1,3,1],[1,2,1,3],[3,3,5,5]],"dfs")
+
+
+
+
 
 b1 = [[0,2,0,0,0,1,3,4,2],
 	  [0,2,2,3,0,1,2,3,1],
