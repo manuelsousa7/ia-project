@@ -1,0 +1,167 @@
+EX1
+
+
+---------- Greedy ----------
+Duracao:  0.00033092498779296875
+Estados:  0
+Goal tests:  2
+Sequencia de Acoes:  Sem Solucao
+Sequencia de Nos:  Sem Solucao
+Sucessos:  1
+-------------------------
+---------- A* -----------
+Duracao:  0.00026607513427734375
+Estados:  0
+Goal tests:  2
+Sequencia de Acoes:  Sem Solucao
+Sequencia de Nos:  Sem Solucao
+Sucessos:  1
+-------------------------
+---------- DFS ----------
+Duracao:  0.0002911090850830078
+Estados:  0
+Goal tests:  1
+Sequencia de Acoes:  Sem Solucao
+Sequencia de Nos:  Sem Solucao
+Sucessos:  1
+-------------------------
+
+
+EX2
+
+
+---------- Greedy ----------
+Duracao:  0.0014100074768066406
+Estados:  6
+Goal tests:  5
+Sequencia de Acoes:  [[(0, 1), (1, 1), (2, 1), (2, 2), (1, 2), (0, 2), (2, 3), (2, 4), (1, 0)], [(1, 0), (2, 0), (3, 0), (3, 1), (3, 2), (3, 3), (2, 3), (3, 4)], [(2, 1), (3, 1), (3, 0)]]
+Sequencia de Nos:  [<Node <__main__.sg_state object at 0x10a9ef8d0>>, <Node <__main__.sg_state object at 0x10a98ac18>>, <Node <__main__.sg_state object at 0x10a98ad68>>, <Node <__main__.sg_state object at 0x10a98ae48>>]
+Sucessos:  3
+Arvore DFS:  <   3/   5/   6/<__m>
+Estado:  [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+-------------------------
+---------- A* -----------
+Duracao:  0.0015223026275634766
+Estados:  7
+Goal tests:  6
+Sequencia de Acoes:  [[(0, 1), (1, 1), (2, 1), (2, 2), (1, 2), (0, 2), (2, 3), (2, 4), (1, 0)], [(1, 0), (2, 0), (3, 0), (3, 1), (3, 2), (3, 3), (2, 3), (3, 4)], [(2, 1), (3, 1), (3, 0)]]
+Sequencia de Nos:  [<Node <__main__.sg_state object at 0x10a9ef9b0>>, <Node <__main__.sg_state object at 0x10a98ac18>>, <Node <__main__.sg_state object at 0x10a98acc0>>, <Node <__main__.sg_state object at 0x10a98abe0>>]
+Sucessos:  4
+Arvore DFS:  <   4/   6/   7/<__m>
+Estado:  [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+-------------------------
+---------- DFS ----------
+Duracao:  0.001386880874633789
+Estados:  7
+Goal tests:  5
+Sequencia de Acoes:  [[(2, 0), (3, 0), (3, 1), (3, 2), (3, 3), (3, 4)], [(1, 3), (1, 4), (2, 4)], [(1, 1), (2, 1), (3, 1), (3, 0), (3, 2), (2, 2), (1, 2), (3, 3), (3, 4)], [(3, 0), (3, 1)]]
+Sequencia de Nos:  [<Node <__main__.sg_state object at 0x10a9ef8d0>>, <Node <__main__.sg_state object at 0x10a98ae80>>, <Node <__main__.sg_state object at 0x10a98aef0>>, <Node <__main__.sg_state object at 0x10a98ab00>>, <Node <__main__.sg_state object at 0x10a98ae10>>]
+Sucessos:  4
+Arvore DFS:  <   4/   5/   7/<__m>
+Estado:  [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+-------------------------
+
+
+EX3
+
+
+---------- Greedy ----------
+Duracao:  26.15908718109131
+Estados:  74701
+Goal tests:  74703
+Sequencia de Acoes:  Sem Solucao
+Sequencia de Nos:  Sem Solucao
+Sucessos:  74702
+-------------------------
+---------- A* -----------
+Duracao:  25.653357982635498
+Estados:  74701
+Goal tests:  74703
+Sequencia de Acoes:  Sem Solucao
+Sequencia de Nos:  Sem Solucao
+Sucessos:  74702
+-------------------------
+---------- DFS ----------
+Duracao:  18.795010089874268
+Estados:  74701
+Goal tests:  74702
+Sequencia de Acoes:  Sem Solucao
+Sequencia de Nos:  Sem Solucao
+Sucessos:  74702
+-------------------------
+
+
+EX4
+
+
+---------- Greedy ----------
+Duracao:  0.016134977340698242
+Estados:  59
+Goal tests:  44
+Sequencia de Acoes:  [[(4, 3), (5, 3), (5, 2), (6, 2), (7, 2), (5, 1), (5, 0)], [(1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)], [(7, 0), (8, 0), (9, 0)], [(4, 1), (5, 1), (4, 2), (4, 3), (5, 3), (6, 3), (7, 3), (8, 3), (6, 2)], [(7, 0), (8, 0), (9, 0), (9, 1), (7, 1)], [(7, 1), (8, 1), (9, 1), (9, 0), (8, 0)], [(8, 1), (9, 1), (9, 0)]]
+Sequencia de Nos:  [<Node <__main__.sg_state object at 0x10a9ef9b0>>, <Node <__main__.sg_state object at 0x10c9ba240>>, <Node <__main__.sg_state object at 0x10c9bad68>>, <Node <__main__.sg_state object at 0x10c9ba358>>, <Node <__main__.sg_state object at 0x10a98ab38>>, <Node <__main__.sg_state object at 0x10c9baac8>>, <Node <__main__.sg_state object at 0x10a98abe0>>, <Node <__main__.sg_state object at 0x10a98af98>>]
+Sucessos:  42
+Arvore DFS:  <  42/  44/  59/<__m>
+Estado:  [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+-------------------------
+---------- A* -----------
+Duracao:  0.015686750411987305
+Estados:  43
+Goal tests:  26
+Sequencia de Acoes:  [[(4, 3), (5, 3), (5, 2), (6, 2), (7, 2), (5, 1), (5, 0)], [(1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)], [(7, 0), (8, 0), (9, 0)], [(4, 1), (5, 1), (4, 2), (4, 3), (5, 3), (6, 3), (7, 3), (8, 3), (6, 2)], [(7, 0), (8, 0), (9, 0), (9, 1), (7, 1)], [(7, 1), (8, 1), (9, 1), (9, 0), (8, 0)], [(8, 1), (9, 1), (9, 0)]]
+Sequencia de Nos:  [<Node <__main__.sg_state object at 0x10a9ef8d0>>, <Node <__main__.sg_state object at 0x10c9ba6d8>>, <Node <__main__.sg_state object at 0x10c9bac50>>, <Node <__main__.sg_state object at 0x10c9ba8d0>>, <Node <__main__.sg_state object at 0x10c9ba470>>, <Node <__main__.sg_state object at 0x10c9bae10>>, <Node <__main__.sg_state object at 0x10a98af28>>, <Node <__main__.sg_state object at 0x10a98aeb8>>]
+Sucessos:  24
+Arvore DFS:  <  24/  26/  43/<__m>
+Estado:  [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+-------------------------
+---------- DFS ----------
+Duracao:  0.027842044830322266
+Estados:  85
+Goal tests:  55
+Sequencia de Acoes:  [[(8, 1), (8, 2), (9, 2)], [(8, 1), (9, 1)], [(7, 0), (8, 0), (9, 0), (8, 1), (8, 2), (9, 2), (9, 3), (7, 2)], [(9, 1), (9, 2)], [(7, 3), (8, 3), (9, 3), (9, 2), (9, 1), (9, 0)], [(7, 2), (7, 3)], [(8, 3), (9, 3), (9, 2)], [(9, 1), (9, 2), (9, 3)], [(9, 1), (9, 2)], [(8, 1), (9, 1)], [(9, 0), (9, 1)], [(6, 0), (7, 0), (8, 0)], [(8, 0), (9, 0)]]
+Sequencia de Nos:  [<Node <__main__.sg_state object at 0x10a9ef9b0>>, <Node <__main__.sg_state object at 0x10c9bac88>>, <Node <__main__.sg_state object at 0x10c9ba940>>, <Node <__main__.sg_state object at 0x10c9ba9b0>>, <Node <__main__.sg_state object at 0x10c9ba710>>, <Node <__main__.sg_state object at 0x10c9ba588>>, <Node <__main__.sg_state object at 0x10c9baf28>>, <Node <__main__.sg_state object at 0x10a98abe0>>, <Node <__main__.sg_state object at 0x10a98ab38>>, <Node <__main__.sg_state object at 0x10a98add8>>, <Node <__main__.sg_state object at 0x10a98ae80>>, <Node <__main__.sg_state object at 0x10a98ada0>>, <Node <__main__.sg_state object at 0x10a8c9710>>, <Node <__main__.sg_state object at 0x10a89e470>>]
+Sucessos:  54
+Arvore DFS:  <  54/  55/  85/<__m>
+Estado:  [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+-------------------------
+
+
+EX5
+
+
+---------- Greedy ----------
+Duracao:  0.11988997459411621
+Estados:  319
+Goal tests:  258
+Sequencia de Acoes:  [[(2, 1), (3, 1)], [(9, 0), (9, 1)], [(3, 0), (3, 1), (3, 2)], [(3, 0), (4, 0), (5, 0), (6, 0), (7, 0), (7, 1)], [(0, 3), (1, 3)], [(2, 3), (3, 3)], [(5, 2), (5, 3)], [(7, 0), (8, 0), (9, 0), (8, 1), (8, 2)], [(3, 1), (4, 1), (5, 1), (6, 1), (6, 2)], [(6, 0), (7, 0), (8, 0), (8, 1), (8, 2)], [(9, 1), (9, 2)], [(8, 2), (9, 2)], [(9, 0), (9, 1)]]
+Sequencia de Nos:  [<Node <__main__.sg_state object at 0x10a89eba8>>, <Node <__main__.sg_state object at 0x10a98ab38>>, <Node <__main__.sg_state object at 0x10c9baf28>>, <Node <__main__.sg_state object at 0x10c9bae10>>, <Node <__main__.sg_state object at 0x10c9ba0f0>>, <Node <__main__.sg_state object at 0x10c9babe0>>, <Node <__main__.sg_state object at 0x10c9baac8>>, <Node <__main__.sg_state object at 0x115404240>>, <Node <__main__.sg_state object at 0x115404e10>>, <Node <__main__.sg_state object at 0x115404c50>>, <Node <__main__.sg_state object at 0x115404f28>>, <Node <__main__.sg_state object at 0x1153fc128>>, <Node <__main__.sg_state object at 0x1153fc198>>, <Node <__main__.sg_state object at 0x1153fc278>>]
+Sucessos:  256
+Arvore DFS:  < 256/ 258/ 319/<__m>
+Estado:  [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+-------------------------
+---------- A* -----------
+Duracao:  0.0409541130065918
+Estados:  91
+Goal tests:  18
+Sequencia de Acoes:  [[(2, 1), (3, 1)], [(9, 0), (9, 1)], [(3, 0), (3, 1), (3, 2)], [(3, 0), (4, 0), (5, 0), (6, 0), (7, 0), (7, 1)], [(5, 2), (5, 3)], [(7, 0), (8, 0), (9, 0), (8, 1), (8, 2)], [(3, 1), (4, 1), (5, 1), (6, 1), (6, 2)], [(4, 2), (5, 2)], [(6, 2), (7, 2)], [(6, 0), (7, 0), (8, 0), (8, 1), (8, 2), (7, 2), (6, 2)], [(9, 1), (9, 2)], [(9, 0), (9, 1)]]
+Sequencia de Nos:  [<Node <__main__.sg_state object at 0x10a89e470>>, <Node <__main__.sg_state object at 0x112b91f98>>, <Node <__main__.sg_state object at 0x112b91860>>, <Node <__main__.sg_state object at 0x112b91630>>, <Node <__main__.sg_state object at 0x112b91240>>, <Node <__main__.sg_state object at 0x11777be10>>, <Node <__main__.sg_state object at 0x11777b2e8>>, <Node <__main__.sg_state object at 0x11777b198>>, <Node <__main__.sg_state object at 0x11107cd30>>, <Node <__main__.sg_state object at 0x11107c748>>, <Node <__main__.sg_state object at 0x11107c630>>, <Node <__main__.sg_state object at 0x11107c550>>, <Node <__main__.sg_state object at 0x11107c4e0>>]
+Sucessos:  16
+Arvore DFS:  <  16/  18/  91/<__m>
+Estado:  [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+-------------------------
+---------- DFS ----------
+
+
+
+
+
+
+Duracao:  795.9233100414276
+Estados:  3123363
+Goal tests:  3123309
+Sequencia de Acoes:  [[(9, 2), (9, 3)], [(7, 0), (8, 0), (7, 1)], [(6, 2), (6, 3)], [(5, 1), (6, 1)], [(5, 0), (6, 0), (7, 0), (8, 0), (7, 1)], [(6, 1), (7, 1), (8, 1), (7, 2)], [(8, 1), (9, 1), (9, 0), (8, 2)], [(9, 0), (9, 1), (9, 2)], [(9, 0), (9, 1)], [(9, 0), (9, 1)], [(7, 0), (8, 0), (9, 0), (7, 1)], [(7, 0), (8, 0)], [(7, 0), (8, 0)], [(7, 0), (8, 0), (9, 0)]]
+Sequencia de Nos:  [<Node <__main__.sg_state object at 0x10a89e470>>, <Node <__main__.sg_state object at 0x11777bcc0>>, <Node <__main__.sg_state object at 0x11777beb8>>, <Node <__main__.sg_state object at 0x11777b470>>, <Node <__main__.sg_state object at 0x112b912b0>>, <Node <__main__.sg_state object at 0x112b91ba8>>, <Node <__main__.sg_state object at 0x112b91e80>>, <Node <__main__.sg_state object at 0x112b91cc0>>, <Node <__main__.sg_state object at 0x112b91a58>>, <Node <__main__.sg_state object at 0x112b91b38>>, <Node <__main__.sg_state object at 0x112b91da0>>, <Node <__main__.sg_state object at 0x112b91a90>>, <Node <__main__.sg_state object at 0x112b91748>>, <Node <__main__.sg_state object at 0x11777b6a0>>, <Node <__main__.sg_state object at 0x11777be80>>]
+Sucessos:  3123308
+Arvore DFS:  <3123308/3123309/3123363/<__m>
+Estado:  [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+-------------------------
