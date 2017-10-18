@@ -43,17 +43,18 @@
 \maketitle
 
 \section*{Introdução}
-balbalbalablablball
+Todas as complexidades indicadas são referentes à procura numa árvore binária,
+visto que alguns valores podem ser diferentes no caso específico de uma procura
+num grafo.\par
 
 \section*{Descrição do problema}
-sdfsdfsdfsdffdssffsdfdssdfsdfdsfsfsdfdsfsfs\par
 
-\section*{Procura em Profundidade Primeiro}
+\section*{Profundidade Primeiro}
 
 	\begin{table}[h!]
 	  \centering
-	  \caption{Desempenho}
-	  \label{tab:Procura em Profundidade Primeiro}
+	  \caption{Casos teste}
+	  \label{tab:Profundidade Primeiro}
 	  \begin{tabular}{l|c|c|c|c|r}
 	     & Exemplo 1 & Exemplo 2 & Exemplo 3 & Exemplo 4 & Exemplo 5 \\
 	    \hline
@@ -70,7 +71,7 @@ sdfsdfsdfsdffdssffsdfdssdfsdfdsfsfsdfdsfsfs\par
 
 	\begin{table}[h!]
 	  \centering
-	  \caption{Desempenho}
+	  \caption{Casos teste}
 	  \label{tab:Procura Gananciosa}
 	  \begin{tabular}{l|c|c|c|c|r}
 	     & Exemplo 1 & Exemplo 2 & Exemplo 3 & Exemplo 4 & Exemplo 5 \\
@@ -88,8 +89,8 @@ sdfsdfsdfsdffdssffsdfdssdfsdfdsfsfsdfdsfsfs\par
 
 	\begin{table}[h!]
 	  \centering
-	  \caption{Desempenho}
-	  \label{tab:Procura Gananciosa}
+	  \caption{Casos teste}
+	  \label{tab:A*}
 	  \begin{tabular}{l|c|c|c|c|r}
 	     & Exemplo 1 & Exemplo 2 & Exemplo 3 & Exemplo 4 & Exemplo 5 \\
 	    \hline
@@ -104,6 +105,25 @@ sdfsdfsdfsdffdssffsdfdssdfsdfdsfsfsdfdsfsfs\par
 
 \section*{Conclusão}
 
+	\begin{table}[h!]
+	  \centering
+	  \caption{Desempenho}
+	  \label{tab: Comparação}
+	  \begin{tabular}{l|c|c|c|r}
+	     & Complexidade Temporal & Complexidade Espacial & Completo & Ótimo \\
+	    \hline
+	    Profundidade Primeiro & O(b^m) & O(b*m) & Não & Não \\
+	    \hline
+	    Procura Gananciosa & O(b^m) & O(b^m) & Não & Não \\
+	    \hline
+	    A* & Exponencial & Exponencial & Sim(Exceto se for infinito) & Sim \\
+	    \hline
+	  \end{tabular}
+	\end{table}
+
+A heurística usada (nº de grupos restantes) não é admissível, porque em certos casos porque sobre-estimar o custo.
+
+Impacto que a dimensão do tabuleiro e número de cores tem na procura?
 
 
 \end{document}
