@@ -43,31 +43,17 @@
 \maketitle
 
 \section*{Introdução}
-Todas as complexidades indicadas são referentes à procura numa árvore binária,
+Todas as complexidades indicadas são referentes à procura numa árvore,
 visto que alguns valores podem ser diferentes no caso específico de uma procura
 num grafo.\par
 
-<<<<<<< HEAD
-\section*{Procura em Profundidade Primeiro}
-Nao Completa
-Nao Optima
-O(b^m) tempo \par
-O(b*m) espaco
-
-\section*{Procura Gananciosa}
-Nao completa (pode entrar em ciclo)\par
-Tempo(b^m) mas uma boa heurística pode reduzi-lo dramaticamente
-Espaco(b^m) no pior caso mantém todos os nós em memória
-Nao Optima\par
-
-=======
 \section*{Descrição do problema}
-
-\section*{Profundidade Primeiro}
-
+sdfsdffdsfsd\par
+\section*{Procura em Profundidade Primeiro}
+sdffdssdfdsf\par
 	\begin{table}[h!]
 	  \centering
-	  \caption{Casos teste}
+	  \caption{Desempenho da Procura em Profundidade Primeiro}
 	  \label{tab:Profundidade Primeiro}
 	  \begin{tabular}{l|c|c|c|c|r}
 	     & Exemplo 1 & Exemplo 2 & Exemplo 3 & Exemplo 4 & Exemplo 5 \\
@@ -82,11 +68,10 @@ Nao Optima\par
 	\end{table}
 
 \section*{Procura Gananciosa}
->>>>>>> d66346661f1dbfb5352a510fe30b9fd6a88954a2
-
+asdadsadsasd\par
 	\begin{table}[h!]
 	  \centering
-	  \caption{Casos teste}
+	  \caption{Desempenho da Procura Gananciosa}
 	  \label{tab:Procura Gananciosa}
 	  \begin{tabular}{l|c|c|c|c|r}
 	     & Exemplo 1 & Exemplo 2 & Exemplo 3 & Exemplo 4 & Exemplo 5 \\
@@ -101,17 +86,10 @@ Nao Optima\par
 	\end{table}
 
 \section*{A*}
-<<<<<<< HEAD
-Optima!
-Completa
-Tempo: Exponencial 
-Exponencial: mantém todos os nós em memória (no pior caso)
-=======
->>>>>>> d66346661f1dbfb5352a510fe30b9fd6a88954a2
-
+A procura por $A*$ é um algoritmo de procura que oferece optimalizade. No entanto isso apenas acontece se garantirmos que a heuristica utilizada é admissivel. Um dos principais problemas da utilização desta procura é que é necessário guardar todos os nós em memória, tornando a complexidade espacial exponencial.\par
 	\begin{table}[h!]
 	  \centering
-	  \caption{Casos teste}
+	  \caption{Desempenho do A*}
 	  \label{tab:A*}
 	  \begin{tabular}{l|c|c|c|c|r}
 	     & Exemplo 1 & Exemplo 2 & Exemplo 3 & Exemplo 4 & Exemplo 5 \\
@@ -127,25 +105,27 @@ Exponencial: mantém todos os nós em memória (no pior caso)
 
 \section*{Conclusão}
 
+Sendo $b$ o fator de ramificação, e $m$ a profundidade máxima, podemos concluir resumidamente numa tabela, as várias propriedades dos algoritmos aqui testados:
+
 	\begin{table}[h!]
 	  \centering
-	  \caption{Desempenho}
+	  \caption{Propriedades das várias procuras}
 	  \label{tab: Comparação}
 	  \begin{tabular}{l|c|c|c|r}
-	     & Complexidade Temporal & Complexidade Espacial & Completo & Ótimo \\
+	     & C. Temporal & C. Espacial & Completo & Ótimo \\
 	    \hline
-	    Profundidade Primeiro & O(b^m) & O(b*m) & Não & Não \\
+	    Profundidade Primeiro & $O(b^m)$ & $O(b*m)$ & Não & Não \\
 	    \hline
-	    Procura Gananciosa & O(b^m) & O(b^m) & Não & Não \\
+	    Procura Gananciosa & $O(b^m)$ & $O(b^m)$ & Não & Não \\
 	    \hline
 	    A* & Exponencial & Exponencial & Sim(Exceto se for infinito) & Sim \\
 	    \hline
 	  \end{tabular}
 	\end{table}
 
-A heurística usada (nº de grupos restantes) não é admissível, porque em certos casos porque sobre-estimar o custo.
+Numa conclusão geral, verificamos que todos os algoritmos computam de forma bastante rápida os testes mais básicos (Exemplo 1 e 2). Ao aplicar um tabuleiro de 10x4, composto por 3 cores e sem solução, verificamos que a Procura em profundidade Primeiro é quem leva a melhor ao nivel do tempo de execução, em relação ás restantes procuras. No entanto, o mesmo algoritmo de procura teve pior desempenho na execucao do Exemplo 5, demorando mais de 13 minutos a chegar a uma solução.
 
-Impacto que a dimensão do tabuleiro e número de cores tem na procura?
+A heurística usada (nº de grupos restantes) não é admissível, porque em certos casos vai sobrestimar o custo de atingir o objetivo. Como o problema é NP-Completo, podemos garantir pela conjetura de $P \neq NP$, que não existe uma heuristica admissivel.
 
 
 \end{document}
