@@ -42,15 +42,11 @@
 	}
 \maketitle
 
-\section*{Introdução}
-Todas as complexidades indicadas são referentes à procura numa árvore,
-visto que alguns valores podem ser diferentes no caso específico de uma procura
-num grafo.\par
-
-\section*{Descrição do problema}
-sdfsdffdsfsd\par
 \section*{Procura em Profundidade Primeiro}
-sdffdssdfdsf\par
+Comparando o Exemplo 2 e o Exemplo 4, conclui-se que o tamanho do tabuleiro tem um impacto significativo na procura, aumentando o tempo de execução para 2000\% no Exemplo 4.
+Através de outra comparação entre o Exemplo 4 e o Exemplo 5, concluímos que o aumento do
+número de cores tem um impacto extremamente significativo no desempenho, aumentando o tempo
+de execução para cerca de 3000000\%.\par
 	\begin{table}[h!]
 	  \centering
 	  \caption{Desempenho da Procura em Profundidade Primeiro}
@@ -66,9 +62,14 @@ sdffdssdfdsf\par
 	    \hline
 	  \end{tabular}
 	\end{table}
+	\par
 
 \section*{Procura Gananciosa}
-asdadsadsasd\par
+Relativamente ao tamanho do tabuleiro, o impacto é semelhante ao algoritmo anterior, apesar de ser ligeiramente mais significativo.
+Em relação ao impacto no aumento do número de cores, conclui-se que este é significativo,
+aumentando o tempo de execução para cerca de 150\%.\par
+
+
 	\begin{table}[h!]
 	  \centering
 	  \caption{Desempenho da Procura Gananciosa}
@@ -84,9 +85,18 @@ asdadsadsasd\par
 	    \hline
 	  \end{tabular}
 	\end{table}
+	\par
 
 \section*{A*}
+
 A procura por $A*$ é um algoritmo de procura que oferece optimalizade. No entanto isso apenas acontece se garantirmos que a heuristica utilizada é admissivel. Um dos principais problemas da utilização desta procura é que é necessário guardar todos os nós em memória, tornando a complexidade espacial exponencial.\par
+
+Comparando o Exemplo 2 e o Exemplo 4, conclui-se que o tamanho do tabuleiro tem um impacto bastante significativo na procura, visto que duplicando o tamanho do tabuleiro, o
+tempo de procura aumentou para 1000\%.
+Através de outra comparação entre o Exemplo 4 e o Exemplo 5, concluímos que o aumento do
+número de cores tem um impacto no tempo de procura, mas não tão significativo.
+Quase duplicando o número de cores, obteve-se um aumento do tempo de procura de cerca de 250%.
+
 	\begin{table}[h!]
 	  \centering
 	  \caption{Desempenho do A*}
@@ -102,6 +112,7 @@ A procura por $A*$ é um algoritmo de procura que oferece optimalizade. No entan
 	    \hline
 	  \end{tabular}
 	\end{table}
+	\par
 
 \section*{Conclusão}
 
@@ -125,7 +136,7 @@ Sendo $b$ o fator de ramificação, e $m$ a profundidade máxima, podemos conclu
 
 Numa conclusão geral, verificamos que todos os algoritmos computam de forma bastante rápida os testes mais básicos (Exemplo 1 e 2). Ao aplicar um tabuleiro de 10x4, composto por 3 cores e sem solução, verificamos que a Procura em profundidade Primeiro é quem leva a melhor ao nivel do tempo de execução, em relação ás restantes procuras. No entanto, o mesmo algoritmo de procura teve pior desempenho na execucao do Exemplo 5, demorando mais de 13 minutos a chegar a uma solução.
 
-A heurística usada (nº de grupos restantes) não é admissível, porque em certos casos vai sobrestimar o custo de atingir o objetivo. Como o problema é NP-Completo, podemos garantir pela conjetura de $P \neq NP$, que não existe uma heuristica admissivel.
 
+A heurística usada (nº de grupos restantes) não é admissível, porque em certos casos vai sobrestimar o custo de atingir o objetivo. Como o problema é NP-Completo, podemos garantir pela conjetura de $P \neq NP$, que não existe uma heuristica admissivel.
 
 \end{document}
