@@ -43,7 +43,7 @@
 \maketitle
 
 \section*{Procura em Profundidade Primeiro}
-A Procura em Profundidade Primeiro é um algoritmo de procura não optimo. Este algoritmo não encontra soluções em espaços de estados com profundidade infinita ou com ciclos, dado que podemos concluir nao ser completa.\par
+A Procura em Profundidade Primeiro é um algoritmo de procura não optimo. Este algoritmo não encontra soluções em espaços de estados com profundidade infinita ou com ciclos, e por isso concluimos que não é completo.\par
 Comparando o Exemplo 2 e o Exemplo 4, conclui-se que o tamanho do tabuleiro tem um impacto significativo na procura, aumentando o tempo de execução para 2000\% no Exemplo 4.
 Através de outra comparação entre o Exemplo 4 e o Exemplo 5, concluímos que o aumento do
 número de cores tem um impacto extremamente significativo no desempenho, aumentando o tempo
@@ -98,7 +98,6 @@ tempo de procura aumentou para 1000\%.
 Através de outra comparação entre o Exemplo 4 e o Exemplo 5, concluímos que o aumento do
 número de cores tem um impacto no tempo de procura, mas não tão significativo.
 Quase duplicando o número de cores, obteve-se um aumento do tempo de procura de cerca de 250\%.\par
-A heurística usada (nº de grupos restantes) não é admissível, porque em certos casos vai sobrestimar o custo de atingir o objetivo. Como o problema é NP-Completo, podemos garantir pela conjetura de $P \neq NP$, que não existe uma heuristica admissivel.\par
 
 	\begin{table}[h!]
 	  \centering
@@ -137,6 +136,8 @@ Sendo $b$ o fator de ramificação, e $m$ a profundidade máxima, podemos conclu
 	  \end{tabular}
 	\end{table}
 
-Numa conclusão geral, verificamos que todos os algoritmos computam de forma bastante rápida os testes mais básicos (Exemplo 1 e 2). Ao aplicar um tabuleiro de 10x4, composto por 3 cores e sem solução, verificamos que a Procura em profundidade Primeiro é quem leva a melhor ao nivel de tempo de execução, em relação ás restantes procuras. No entanto, o mesmo algoritmo de procura teve pior desempenho na execucao do Exemplo 5, demorando mais de 13 minutos a chegar a uma solução.
+
+Numa conclusão geral, verificamos que todos os algoritmos computam de forma bastante rápida os testes mais básicos (Exemplo 1 e 2).\par
+A heurística usada neste projeto (nº de grupos restantes) não é admissível, porque em certos casos vai sobrestimar o custo de atingir o objetivo. Como o problema é NP-Completo, podemos garantir pela conjetura de $P \neq NP$, que não existe uma heuristica admissivel para este problema.\par
 
 \end{document}
