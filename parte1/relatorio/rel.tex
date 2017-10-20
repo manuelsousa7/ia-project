@@ -42,6 +42,33 @@
 	}
 \maketitle
 
+\section*{A*}
+
+A procura por $A*$ é um algoritmo de procura que oferece optimalidade. No entanto isso apenas acontece se garantirmos que a heuristica utilizada é admissível. Um dos principais problemas da utilização desta procura é que exige guardar todos os nós em memória, tornando a complexidade espacial exponencial.\par
+
+Comparando o Exemplo 2 e o Exemplo 4, conclui-se que o tamanho do tabuleiro tem um impacto bastante significativo na procura, visto que duplicando o tamanho do tabuleiro, o
+tempo de procura aumentou para 1000\% no Exemplo 4.
+Através de outra comparação entre o Exemplo 4 e o Exemplo 5, concluímos que o aumento do
+número de cores tem um impacto no tempo de procura, mas não tão significativo.
+Quase duplicando o número de cores, obteve-se um aumento do tempo de procura de cerca de 250\% no Exemplo 5.\par
+
+	\begin{table}[h!]
+	  \centering
+	  \caption{Desempenho do A*}
+	  \label{tab:A*}
+	  \begin{tabular}{l|c|c|c|c|r}
+	     & Exemplo 1 & Exemplo 2 & Exemplo 3 & Exemplo 4 & Exemplo 5 \\
+	    \hline
+	    Tempo de Execução (s) & 0.000266 & 0.001522 & 25.653358 & 0.015687 & 0.040954 \\
+	    \hline
+	    Nº de nós expandidos & 1 & 4 & 74702 & 24 & 16 \\
+	    \hline
+	    Nº de nós gerados & 0 & 7 & 74701 & 43 & 91 \\
+	    \hline
+	  \end{tabular}
+	\end{table}
+	\par
+
 \section*{Procura em Profundidade Primeiro}
 A Procura em Profundidade Primeiro é um algoritmo de procura não óptimo. Este algoritmo não encontra soluções em espaços de estados com profundidade infinita ou com ciclos, e por isso concluimos que não é completo.\par
 Comparando o Exemplo 2 e o Exemplo 4, conclui-se que o tamanho do tabuleiro tem um impacto significativo na procura, aumentando o tempo de execução para 2000\% no Exemplo 4, comparativamente ao Exemplo 2.
@@ -89,32 +116,6 @@ aumentando o tempo de execução para cerca de 150\% entre o Exemplo 4 e 5.\par
 	\end{table}
 	\par
 
-\section*{A*}
-
-A procura por $A*$ é um algoritmo de procura que oferece optimalidade. No entanto isso apenas acontece se garantirmos que a heuristica utilizada é admissível. Um dos principais problemas da utilização desta procura é que exige guardar todos os nós em memória, tornando a complexidade espacial exponencial.\par
-
-Comparando o Exemplo 2 e o Exemplo 4, conclui-se que o tamanho do tabuleiro tem um impacto bastante significativo na procura, visto que duplicando o tamanho do tabuleiro, o
-tempo de procura aumentou para 1000\% no Exemplo 4.
-Através de outra comparação entre o Exemplo 4 e o Exemplo 5, concluímos que o aumento do
-número de cores tem um impacto no tempo de procura, mas não tão significativo.
-Quase duplicando o número de cores, obteve-se um aumento do tempo de procura de cerca de 250\% no Exemplo 5.\par
-
-	\begin{table}[h!]
-	  \centering
-	  \caption{Desempenho do A*}
-	  \label{tab:A*}
-	  \begin{tabular}{l|c|c|c|c|r}
-	     & Exemplo 1 & Exemplo 2 & Exemplo 3 & Exemplo 4 & Exemplo 5 \\
-	    \hline
-	    Tempo de Execução (s) & 0.000266 & 0.001522 & 25.653358 & 0.015687 & 0.040954 \\
-	    \hline
-	    Nº de nós expandidos & 1 & 4 & 74702 & 24 & 16 \\
-	    \hline
-	    Nº de nós gerados & 0 & 7 & 74701 & 43 & 91 \\
-	    \hline
-	  \end{tabular}
-	\end{table}
-	\par
 
 \section*{Conclusão}
 
@@ -137,7 +138,7 @@ Sendo $b$ o fator de ramificação, e $m$ a profundidade máxima, podemos descre
 	\end{table}
 
 A heurística usada neste projeto (nº de grupos restantes) não é admissível, porque em certos casos vai sobrestimar o custo de atingir o objetivo. Por exemplo, se no tabuleiro
-restarem 3 grupos, e ao se apagar um grupo, passe a restar apenas um (dois grupos juntaram-se num só), a heurística vai sobreestimar a distância ao objetivo, visto que na realidade
-restavam apenas 2 grupos e não 3. Como o problema é NP-Completo, podemos garantir pela conjetura de $P \neq NP$, que não existe uma heuristica admissivel para este problema.\par
+restarem 3 grupos, e ao apagar um grupo, passa a restar apenas um (dois grupos juntaram-se num só), a heurística vai sobreestimar a distância ao objetivo, visto que na realidade
+restavam apenas 2 grupos e não 3. Como o problema é NP-Completo, podemos concluir pela conjetura $P \neq NP$, que não existe uma heuristica admissivel para este problema.\par
 
 \end{document}
