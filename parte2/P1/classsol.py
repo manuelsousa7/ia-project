@@ -13,36 +13,53 @@ def features(X):
         F[x,0] = len(X[x])
         F[x,1] = numberOfVowels(X[x])
         F[x,2] = numberOfConsonants(X[x])
-        F[x,3] = #Percentagem de vogais
-        F[x,4] = #Numero/Percentagem de caracteres esquisitos? (ç Ù)...
+        #F[x,3] = percentageOfConsonants(X[x]) --> NAO FUNCIONA
 
     return F
 
 def numberOfVowels(X):
+    vowels = ['a','e','i','o','u','á','à','â','ã','é','è','ê','í','ì','î','ó','ò','õ','ô','ú','ù','û']
     count = 0
-    if (letter in X == "a" or "e" or "i" or "o" or "u"):
-        count++
+    for letter in X:
+        if (letter in vowels):
+            count+=1
     return count
 
-def numberOfConsonants(X):
+def percentageOfVowels(X):
     count = 0
-    if (not (letter in X == "a" or "e" or "i" or "o" or "u")):
-        count++
+    vowelCount = 0
+    vowels = ['a','e','i','o','u','á','à','â','ã','é','è','ê','í','ì','î','ó','ò','õ','ô','ú','ù','û']
+    for letter in X:
+        count+=1
+        if (letter in vowels):
+            vowelCount+=1
+
+    return vowelCount/count
+
+def percentageOfConsonants(X):
+    return 1 - percentageOfVowels(X)
+
+def numberOfConsonants(X):
+    vowels = ['a','e','i','o','u','á','à','â','ã','é','è','ê','í','ì','î','ó','ò','õ','ô','ú','ù','û']
+    count = 0
+    for letter in X:
+        if (not (letter in vowels)):
+            count+=1
     return count
 
 def mytraining(f,Y):
-    clf = #Implementar
+    #Ambos funcionam
+    clf = neighbors.KNeighborsClassifier(2, weights='uniform')
+    #clf = linear_model.SGDClassifier()
     clf = clf.fit(f, Y)
    
     return clf
     
 def mytrainingaux(f,Y,par):
     
-    return clf
+    return 0
 
 def myprediction(f, clf):
     Ypred = clf.predict(f)
 
     return Ypred
-
-print(numberOfVowels("Lolitos"))
