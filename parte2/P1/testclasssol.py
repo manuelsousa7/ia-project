@@ -25,6 +25,7 @@ for test in ["wordsclass.npy", "wordsclass2.npy"]:
       
     Ypred = classsol.myprediction(f, clf)
         
+    print(np.sum(Y^Ypred)/len(X));
     if (np.sum(Y^Ypred)/len(X))<.05:
         print("Erro bastante baixo. PERFECT!\n")
     elif (np.sum(Y^Ypred)/len(X))<.3:    
