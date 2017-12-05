@@ -5,15 +5,19 @@ from sklearn.model_selection import cross_val_score
 import timeit
 
 def mytraining(X,Y):
-    #reg = linear_model.LinearRegression(fit_intercept=True, normalize=False, copy_X=True, n_jobs=1)
-    reg = linear_model.Ridge(alpha=1.0, fit_intercept=True, normalize=False, copy_X=True, max_iter=None, tol=0.001, solver='auto', random_state=None)
+    #Tem de funcionar os dois
+    reg = tree.DecisionTreeRegressor(criterion=’mse’, splitter=’best’, max_depth=None, \
+                                    min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, \
+                                    max_features=None, random_state=None, max_leaf_nodes=None, \
+                                    min_impurity_decrease=0.0, min_impurity_split=None, presort=False)
+    reg = KernelRidge(alpha=1, kernel=’linear’, gamma=None, degree=3, coef0=1, kernel_params=None)
     reg.fit(X,Y)
     return reg
     
 def mytrainingaux(X,Y,par):
     
     #reg.fit(X,Y)
-    return reg
+    return
 
 def myprediction(X,reg):
 
