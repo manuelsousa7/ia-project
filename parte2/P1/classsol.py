@@ -6,14 +6,20 @@ import timeit
 
 from sklearn.model_selection import cross_val_score
 
+import hashlib
+
+from random import shuffle
+
 vowels = ['a','e','i','o','u','á','à','â','ã','é','è','ê','í','ì','î','ó','ò','õ','ô','ú','ù','û']
+acentos = ['á','à','â','ã','é','è','ê','í','ì','î','ó','ò','õ','ô','ú','ù','û']
+
 
 def features(X):
     
     # len, numberOfVowels, numberOfConsonants, percentageOfVowels, percentageOfConsonants, evenWord, sameLetters
     # evenVowels, 
     
-    functions = [len, numberOfVowels, numberOfConsonants, percentageOfVowels, percentageOfConsonants, evenWord, sameLetters, evenVowels]
+    functions = [len,totalASCII,uniqueNumber]
     #BEST: len, numberOfVowels, evenWord
     #BEST 50 k neigh: len, numberOfVowels, numberOfConsonants
     F = np.zeros((len(X),len(functions)))
@@ -21,6 +27,9 @@ def features(X):
         for i in range(len(functions)):
             F[x, i] = functions[i](X[x])
     return F
+
+def uniqueNumber (X):
+    return int.from_bytes(X.encode(), 'little')
 
 def numberOfVowels(X):
     count = 0
@@ -32,6 +41,19 @@ def numberOfVowels(X):
 def wordHasR(X):
     return not 'r' in X
 
+def totalASCII(X):
+    soma = 0
+    for i in X:
+        soma += ord(i)
+    return soma
+
+def countAcentos(X):
+    count = 0
+    for i in X:
+        if(i in acentos):
+            count += 1
+    return count
+        
 def numberOfConsonants(X):
     count = 0
     for letter in X:
