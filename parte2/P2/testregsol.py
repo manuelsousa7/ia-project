@@ -10,8 +10,7 @@ from matplotlib.colors import ListedColormap
 import regsol
 
 tres = [.3, 800]    
-#for ii,test in enumerate(['regress.npy', 'regress2.npy']):
-for ii,test in enumerate(['regress.npy']):
+for ii,test in enumerate(['regress.npy', 'regress2.npy']):
     print("Testing " + test)
     
     X,Y,Xp,Yp = np.load(test)
