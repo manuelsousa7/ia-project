@@ -10,16 +10,16 @@ vowels = ['a','e','i','o','u','á','à','â','ã','é','è','ê','í','ì','î',
 
 def features(X):
     
-    # len, numberOfVowels, numberOfConsonants, percentageOfVowels, percentageOfConsonants, evenWord
+    # len, numberOfVowels, numberOfConsonants, percentageOfVowels, percentageOfConsonants, evenWord, sameLetters
     # evenVowels, 
     
-    functions = [numberOfVowels, evenVowels, wordHasR]
+    functions = [len]
     #BEST: len, numberOfVowels, evenWord
-    F = np.zeros((len(X),5))
+    #BEST 50 k neigh: len, numberOfVowels, numberOfConsonants
+    F = np.zeros((len(X),len(functions)))
     for x in range(0,len(X)):
         for i in range(len(functions)):
             F[x, i] = functions[i](X[x])
-
     return F
 
 def numberOfVowels(X):
@@ -33,12 +33,30 @@ def wordHasR(X):
     return not 'r' in X
 
 def numberOfConsonants(X):
-    vowels = ['a','e','i','o','u','á','à','â','ã','é','è','ê','í','ì','î','ó','ò','õ','ô','ú','ù','û']
     count = 0
     for letter in X:
         if (not (letter in vowels)):
             count+=1
     return count
+
+def sameLetters(X):
+    trueList = ["útil"]
+    falseList = ["rir","seara"]
+    dic = {}
+    countT = countF = 0
+    for i in trueList:
+        for l in i:
+            dic[l] = True
+    for i in falseList:
+        for l in i:
+            dic[l] = False
+    for l in X:
+        if(l not in dic or dic[l] == False):
+            countF += 1
+        else:
+            countT += 1
+    return countT > countF
+            
 
 def percentageOfVowels(X):
     count = 0
@@ -68,8 +86,8 @@ def repeatsWords(X):
 
 def mytraining(f,Y):
     #Ambos funcionam
-    #clf = neighbors.KNeighborsClassifier(5, weights='uniform')
-    clf = linear_model.SGDClassifier()
+    #clf = neighbors.KNeighborsClassifier(50, weights='uniform')
+    clf = linear_model.LinearRegression()
     clf = clf.fit(f, Y)
    
     return clf

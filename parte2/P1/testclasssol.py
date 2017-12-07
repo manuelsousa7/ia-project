@@ -5,9 +5,10 @@ from sklearn.externals import joblib
 
 import classsol
 
+
 #load input data
 words = []
-with open("words.txt") as file:
+with open("words.txt", encoding = "ISO-8859-1") as file:
     for line in file: 
         line = line.split(' ') #or some other preprocessing
         words.append(line) #storing everything in memory!
