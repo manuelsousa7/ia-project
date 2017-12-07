@@ -5,7 +5,7 @@ from sklearn.model_selection import cross_val_score
 import timeit
 
 def mytraining(X,Y):
-    reg = KernelRidge(alpha=0.01, kernel='polynomial', gamma=1, degree=4, coef0=1, kernel_params=None)
+    reg = KernelRidge(alpha=0.001, kernel='rbf', gamma=0.1)
     reg.fit(X,Y)
     return reg
 
