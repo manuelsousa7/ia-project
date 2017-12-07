@@ -7,7 +7,13 @@ Created on Mon Oct 16 20:31:54 2017
 import numpy as np
 
 def Q2pol(Q, eta=5):
-    return np.exp(eta*Q)/np.dot(np.exp(eta*Q),np.array([[1,1],[1,1]]))
+    #return np.exp(eta*Q)/np.dot(np.exp(eta*Q),np.array([[1,1],[1,1]]))
+
+    politica = np.zeros(Q.shape)
+    for i in range(Q.shape[0]):
+        for j in range(Q.shape[1]):
+            politica[i][j] = Q[i][j] / max(Q[i])
+    return politica
 	
 class myRL:
 
