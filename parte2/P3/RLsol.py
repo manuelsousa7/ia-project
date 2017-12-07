@@ -15,7 +15,7 @@ class myRL:
         self.nS = nS
         self.nA = nA
         self.gamma = gamma
-        self.alpha = 0.01
+        self.alpha = 0.1
         self.threshold = 1e-2
         self.Q = np.zeros((nS,nA))
         

@@ -13,7 +13,7 @@ def features(X):
     # len, numberOfVowels, numberOfConsonants, percentageOfVowels, percentageOfConsonants, evenWord, sameLetters
     # evenVowels, 
     
-    functions = [len]
+    functions = [len, numberOfVowels, numberOfConsonants, percentageOfVowels, percentageOfConsonants, evenWord, sameLetters, evenVowels]
     #BEST: len, numberOfVowels, evenWord
     #BEST 50 k neigh: len, numberOfVowels, numberOfConsonants
     F = np.zeros((len(X),len(functions)))
@@ -86,8 +86,8 @@ def repeatsWords(X):
 
 def mytraining(f,Y):
     #Ambos funcionam
-    #clf = neighbors.KNeighborsClassifier(50, weights='uniform')
-    clf = linear_model.LinearRegression()
+    clf = neighbors.KNeighborsClassifier(1)
+    #clf = linear_model.LinearRegression()
     clf = clf.fit(f, Y)
    
     return clf
