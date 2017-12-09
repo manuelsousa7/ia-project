@@ -23,7 +23,7 @@ for test in [('fmdp1.pkl','traj1.pkl'), ('fmdp2.pkl','traj2.pkl')]:
         print("Erro nos Q acima dos limites de tolerância. FAILED\n")
     
     # gerar trajectoria aprendida
-    J,trajlearn = fmdp.runPolicy(6,2,RLsol.Q2pol(Q))
+    J,trajlearn = fmdp.runPolicy(6,4,RLsol.Q2pol(Q))
     
     print("Trajectoria gerada com a politica aprendida")
     print(trajlearn)
