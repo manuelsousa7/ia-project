@@ -1,4 +1,5 @@
 \documentclass[11pt,twocolumn]{article}
+    \usepackage{fontspec} %connects to native fonts
     \usepackage{amsmath}
     \usepackage{mathtools}
     \usepackage{cleveref}
@@ -9,14 +10,9 @@
     \usepackage{amssymb}
     \usepackage{subfig}
     \usepackage{float}
-    
     \usepackage[justification=RaggedRight, singlelinecheck=false, font={footnotesize}]{caption}
     \usepackage[portuguese]{babel}
     \usepackage[title,titletoc,toc]{appendix}
-    
-    
-    \usepackage{lipsum}
-    \usepackage{blindtext}
     \usepackage{fontspec}
     \begin{document}
     \pagenumbering{arabic}
@@ -95,11 +91,23 @@ Texto.
 \section*{P3}
 
 A imagem seguinte ilustra como o agente se movimenta pelo ambiente 1, incluíndo uma representação gráfica do mesmo:
-	*inserir imagem Trajetória 1*
 
-A imagem seguinte ilustra como o agente se movimenta pelo ambiente 1, incluíndo uma representação gráfica do mesmo:
-	*inserir imagem Trajetória 2*
+\begin{center}
+    \includegraphics[scale=0.4]{Trajetoria1.png}
+\end{center}
 
-A função de recompensa é a seguinte para ambas as trajetórias *inserir imagem Piecewise 1*.\par
+\par A imagem seguinte ilustra como o agente se movimenta pelo ambiente 1, incluíndo uma representação gráfica do mesmo:
+
+
+
+\begin{center}
+    \includegraphics[scale=0.4]{Trajetoria2.png}
+\end{center}
+
+A função de recompensa é a seguinte para ambas as trajetórias 
+
+\begin{center}
+    \includegraphics[scale=0.6]{piece1.png}
+\end{center}
 
 \end{document}
