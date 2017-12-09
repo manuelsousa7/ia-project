@@ -25,17 +25,16 @@ class myRL:
         self.Q = np.zeros((nS,nA))
         
     def traces2Q(self, trace):
-        nQ = np.zeros((self.nS,self.nA))
-        ii = 0
+        newQ = np.zeros((self.nS,self.nA))
+        
         while True:            
             for tt in trace:
                 #[x, a, y, r]
-                nQ[int(tt[0]),int(tt[1])] = nQ[int(tt[0]),int(tt[1])] + self.alpha * (tt[3] + self.gamma * max(nQ[int(tt[2]),:]) - nQ[int(tt[0]),int(tt[1])])
-            err = np.linalg.norm(self.Q-nQ)
-            self.Q = np.copy(nQ)
+                newQ[int(tt[0]),int(tt[1])] = newQ[int(tt[0]),int(tt[1])] + self.alpha * (tt[3] + self.gamma * max(newQ[int(tt[2]),:]) - newQ[int(tt[0]),int(tt[1])])
+            err = np.linalg.norm(self.Q-newQ)
+            self.Q = np.copy(newQ)
             if err < self.threshold:
                 break 
-            ii += 1
         
         return self.Q
 
