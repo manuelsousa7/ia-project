@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1512852411 "/Users/mvs/repo/ia-project/parte2/relatorio/rel.tex" "rel.pdf" "rel" 1512852411
-  "/Users/mvs/repo/ia-project/parte2/relatorio/rel.tex" 1512852411 4981 90a3abd314121aaebbeae81a33c079f6 ""
+["pdflatex"] 1512853518 "/Users/mvs/repo/ia-project/parte2/relatorio/rel.tex" "rel.pdf" "rel" 1512853518
+  "/Users/mvs/repo/ia-project/parte2/relatorio/rel.tex" 1512853518 5872 53488e7567221a51763e78a1735a71ca ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/local/texlive/2016/texmf-dist/tex/generic/unicode-data/CaseFolding.txt" 1449876215 74499 11c335947e5ffa8ac69a3e530b8d2b40 ""
@@ -16,9 +16,9 @@
   "/usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf" 1463093894 31953 b9489e6e586f798610c60aec1f5ec548 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1492859588 3873397 0d78e58f64dac9de6eda81f96480fb09 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "rel.aux" 1512850198 692 b635140f14342157aa842f89fe820eb8 ""
-  "rel.tex" 1512852411 4981 90a3abd314121aaebbeae81a33c079f6 ""
+  "rel.aux" 1512853388 692 b635140f14342157aa842f89fe820eb8 ""
+  "rel.tex" 1512853518 5872 53488e7567221a51763e78a1735a71ca ""
   (generated)
-  "rel.aux"
   "rel.pdf"
+  "rel.aux"
   "rel.log"
