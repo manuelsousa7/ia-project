@@ -88,10 +88,10 @@
 \section*{P2}
 
 Nesta secção usámos dois métodos de regressão não-linear: Epsilon-Support Vector Regression (SVR) e KernelRidge com kernel de Radial-basis function (KRR).
-Usando validação cruzada (K-fold cross validation com um K=13), concluímos que as precisões de cada um destes métodos em ambos os testes são, respetivamente, (-0.17; -62.50) e (-0.12; -37.23).
+Usando validação cruzada (K-fold cross validation com um K=5), concluímos que as precisões de cada um destes métodos em ambos os testes são, respetivamente, (-0.17; -582.91) e (-0.10; -547.94).
 A grande disparidade de precisão entre ambos os testes deve-se ao facto de os dados apresentados estarem dispostos exatamente de acordo com uma função de 3º grau no primeiro teste,
 ao contrário do 2º teste, em que os valores estão muito mais dispersos.
-Os parâmetros foram ajustados de maneira a modelarem mais precisamente os dados apresentados em ambas as situações.
+Os parâmetros foram ajustados de maneira a modelarem mais precisa e corretamente os dados apresentados em ambas as situações.
 Concluímos então que o método KRR tem melhor precisão no caso apresentado.
 
 \section*{P3}
@@ -106,8 +106,14 @@ As imagens seguintes ilustram a maneira como o agente se movimenta pelos ambient
     \includegraphics[scale=0.4]{Trajetoria2.png}
 \end{center}
 
-A função de recompensa, f(x) = y é a seguinte para ambas as trajetórias, em que x corresponde ao estado 
-em que o agente se encontra e y é a recompensa de executar uma ação nesse estado.\par
+Na trajetória 1, existem dois estados-objetivos , o estado 6 e o estado 0. Se o agente começar no estado 4, 5 ou 6, vai-se dirigir
+sempre em direção do estado 6, visto que é o estado-objetivo mais próximo. Caso contrário vai-se dirigir em direção ao estado 0.
+
+Na trajetória 2, existe apenas um estado-objetivo 0. Nesta situação, o agente vai-se dirigir sempre em direção ao estado 1,
+sendo a única maneira de chegar ao estado-objetivo, que apenas se consegue aceder através do estado 1.
+
+A função de recompensa, f(x) = y, em que x corresponde ao estado em que o agente se encontra e y é a recompensa de executar uma ação nesse estado,
+é a seguinte para ambas as trajetórias\par
 
 \begin{center}
     \includegraphics[scale=0.6]{piece1.png}
