@@ -49,9 +49,29 @@ o comportamento do avaliador, e durante este processo, facilmente concluimos que
 constituintes da palavra, e desta maneira, reduzimos o erro substancialmente, visto que o output dado pela feature será sempre unico, menos quando palavras diferentes fossem constituidas pelos mesmos caracteres (daria o mesmo resultado). Posto isto, criámos uma função que desse um output unico para 
 cada palavra recebida, do genero de uma função de hash. Existe um mecanismo em python que o permite fazer, e com a utilização de uma feature assim conseguimos 0\% de erro!
 
+
 \begin{table}[htbp]
     \centering
-    \caption{Analise dos erros com a evolução das fetures}
+    \caption{Analise individual dos erros de cada feature}
+    \label{my-label}
+    \begin{tabular}{|l|c|c|}
+    \hline
+    \multicolumn{1}{|r|}{}                                      & \textbf{Teste 1} & \textbf{Teste 2}                    \\ \hline
+    N Acentos & 0.6658653846155   & 0.230769230769 \\ \hline
+    N Vogais Par & 0.264423076923   & 0.230769230769 \\ \hline
+    N Vogais & 0.264423076923   & 0.348557692308 \\ \hline
+    N Consoantes   & 0.264423076923  & 0.230769230769      \\ \hline
+    Caracteres para ASCII                             & 0.129807692308              & 0.122596153846                                 \\ \hline
+    Hash                             & 0.0              & 0.0                                 \\ \hline
+    \end{tabular}
+    \end{table}
+\par
+
+Pela tabela 1, verificamos que muitas das features, embora testem coisas diferentes dão resultados muito semelhantes. As features capazes de criar resultados unicos para cada palavra, têm erros mais baixos, como é o caso da hash e dos Caractesres para ASCII.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Analise coletiva dos erros com várias features}
     \label{my-label}
     \begin{tabular}{|l|c|c|}
     \hline
@@ -62,6 +82,7 @@ cada palavra recebida, do genero de uma função de hash. Existe um mecanismo em
     \end{tabular}
     \end{table}
 \par
+
 Pela analise da tabela concluimos que todos os testes escolhidos têm uma percentagem de erro aceitavel. No entanto a ultima opção é a mais viável porque garante uma percentagem de erro de 0\% graças à função de gera um numero unico para cada string.
 
 
