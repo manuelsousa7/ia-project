@@ -19,7 +19,7 @@ def features(X):
     # len, numberOfVowels, numberOfConsonants, percentageOfVowels, percentageOfConsonants, evenWord, sameLetters
     # evenVowels, 
     
-    functions = [numberOfConsonants, totalASCII,uniqueNumber] #Alterar lista para nome de funcoes aka features (O processo é automatico)
+    functions = [numberOfVowels,numberOfConsonants, totalASCII] #Alterar lista para nome de funcoes aka features (O processo é automatico)
     #BEST: len, numberOfVowels, evenWord
     #BEST 50 k neigh: len, numberOfVowels, numberOfConsonants
     F = np.zeros((len(X),len(functions)))
