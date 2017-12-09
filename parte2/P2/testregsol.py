@@ -1,3 +1,4 @@
+# Goncalo Marques - 84719 e Manuel Sousa - 84740 (Grupo 1)
 import numpy as np
 from sklearn import datasets, tree, linear_model
 from sklearn.kernel_ridge import KernelRidge

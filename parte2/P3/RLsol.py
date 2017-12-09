@@ -1,3 +1,4 @@
+# Goncalo Marques - 84719 e Manuel Sousa - 84740 (Grupo 1)
 # -*- coding: utf-8 -*-
 """
 Created on Mon Oct 16 20:31:54 2017

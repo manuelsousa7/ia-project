@@ -1,3 +1,4 @@
+# Goncalo Marques - 84719 e Manuel Sousa - 84740 (Grupo 1)
 import numpy as np
 from sklearn import neighbors, datasets, tree, linear_model
 
@@ -19,7 +20,7 @@ def features(X):
     # len, numberOfVowels, numberOfConsonants, percentageOfVowels, percentageOfConsonants, evenWord, sameLetters
     # evenVowels, 
     
-    functions = [numberOfVowels,numberOfConsonants, totalASCII] #Alterar lista para nome de funcoes aka features (O processo é automatico)
+    functions = [repeatsWords] #Alterar lista para nome de funcoes aka features (O processo é automatico)
     #BEST: len, numberOfVowels, evenWord
     #BEST 50 k neigh: len, numberOfVowels, numberOfConsonants
     F = np.zeros((len(X),len(functions)))
