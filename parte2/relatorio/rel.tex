@@ -40,7 +40,7 @@
     
     \section*{P1}
     
-    Começámos por elaborar um conjunto de features a aplicar sobre as palavras. De inicio contruímos features básicas que verificassem o numero de vogais e consoantes de uma palavra, o numero de acentos, etc. O primeiro objetivo passava apenas por estudar
+    Começámos por elaborar um conjunto de features a aplicar sobre as palavras. De inicio contruímos features básicas que verificassem o número de vogais e consoantes de uma palavra, o número de acentos, etc. O primeiro objetivo passava apenas por estudar
     o comportamento do avaliador, e durante este processo, facilmente concluímos que quanto mais único fosse o output da feature em relação à palavra recebida, menor seria o erro.
     
     
@@ -65,7 +65,7 @@
 
     Podemos observar que a função que soma o ASCII dos caracteres
     constituintes da palavra, tem um erro muito reduzido visto que o output dado pela feature será sempre único, menos quando palavras diferentes são constituídas pelos mesmos caracteres. 
-    Assim, uma função que der um output único para cada palavra recebida iria dar um erro ainda mais baixo. Criámos uma função que gera um inteiro único para uma palavra (Hash), e desta maneira conseguimos obter uma percentagem de erro de 0\%.
+    Assim, uma função que der um output único para cada palavra recebida irá dar um erro ainda mais baixo. Criámos uma função que gera um inteiro único para uma palavra (Hash), e desta maneira conseguimos obter uma percentagem de erro de 0\%.
     
     \begin{table}[htbp]
         \centering
